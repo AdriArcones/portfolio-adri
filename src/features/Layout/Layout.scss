@@ -1,0 +1,12 @@
+@import '../../shared/styles/variables.scss';
+@import '../../shared/styles/mixins.scss';
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__main {
+    flex: 1;
+  }
+} 

@@ -1,0 +1,47 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+:root {
+  --font-primary: #{$font-primary};
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+  --color-background: #{$color-background};
+  --color-surface: #{$color-surface};
+  --color-text: #{$color-text};
+  --color-text-secondary: #{$color-text-secondary};
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-size: $font-size-base;
+  min-height: 100vh;
+}
+
+.container {
+  @include container;
+}
+
+.section {
+  padding: $spacing-xl 0;
+  
+  @include respond-to(md) {
+    padding: $spacing-xl * 2 0;
+  }
+}
+
+// Utilidades
+.text-center { text-align: center; }
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+
+// Animaciones
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+} 
