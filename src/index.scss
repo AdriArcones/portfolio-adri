@@ -1,4 +1,4 @@
-@import './shared/styles/reset.scss';
-@import './shared/styles/variables.scss';
-@import './shared/styles/mixins.scss';
-@import './shared/styles/global.scss'; 
+@use './shared/styles/reset.scss';
+@use './shared/styles/variables.scss' as *;
+@use './shared/styles/mixins.scss' as *;
+@use './shared/styles/global.scss'; 
