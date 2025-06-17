@@ -1,12 +1,15 @@
 
 import './Timeline.scss'
+import CustomSection from '../../shared/components/custom-section/CustomSection'
 
 export const Timeline = () => {
   return (
-    <section className="timeline">
-      <div className="container">
-        {/* Contenido del Timeline */}
-      </div>
-    </section>
+    <CustomSection
+      title="Timeline"
+      subtitle="Desarrollador Full Stack"
+      id="timeline"
+    >
+
+    </CustomSection>
   )
 } 

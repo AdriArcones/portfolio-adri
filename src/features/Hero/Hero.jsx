@@ -1,12 +1,12 @@
+import "./Hero.scss";
+import CustomSection from "../../shared/components/custom-section/CustomSection";
 
-import './Hero.scss'
+
 
 export const Hero = () => {
   return (
-    <section className="hero">
-      <div className="container">
-        {/* Contenido del Hero */}
-      </div>
-    </section>
-  )
-} 
+    <CustomSection id="hero">
+     
+    </CustomSection>
+  );
+};

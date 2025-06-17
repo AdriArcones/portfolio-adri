@@ -1,0 +1,59 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+.custom-card {
+  @include card;
+  @include transition;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  &.glass {
+    @include glassmorphism(10px, 0.06);
+    
+    &:hover {
+      @include glassmorphism(15px, 0.10);
+    }
+  }
+
+  &.glow:hover {
+    @include hover-shadow($color-primary);
+  }
+
+  &.clickable {
+    cursor: pointer;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__content {
+    padding: $spacing-sm;
+  }
+
+  &__title {
+    font-family: $title-font;
+    font-size: 1.2rem;
+    color: $color-text;
+
+  }
+
+  &__subtitle {
+    font-family: $body-font;
+    font-size: 0.9rem;
+    color: $color-text-secondary;
+  }
+
+  &__body {
+    font-family: $body-font;
+    color: $color-text;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+} 

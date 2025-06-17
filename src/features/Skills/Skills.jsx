@@ -1,12 +1,15 @@
 
 import './Skills.scss'
+import CustomSection from '../../shared/components/custom-section/CustomSection'
 
 export const Skills = () => {
   return (
-    <section className="skills">
-      <div className="container">
-        {/* Contenido de Skills */}
-      </div>
-    </section>
+    <CustomSection
+      title="Skills"
+      subtitle="Desarrollador Full Stack"
+      id="skills"
+    >
+
+    </CustomSection>
   )
 } 

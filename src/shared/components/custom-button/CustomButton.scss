@@ -1,0 +1,72 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins.scss' as *;
+@use 'sass:color';
+
+.custom-button {
+  @include flex(row, center, center);
+  gap: 0.5rem;
+  @include transition;
+  font-family: $body-font;
+  border: none;
+  cursor: pointer;
+  border-radius: $border-radius-lg;
+  font-weight: 500;
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  // Variantes
+  &.primary {
+    background-color: $color-primary;
+    color: $color-background-secondary;
+    
+    &:hover:not(:disabled) {
+      background-color: color.adjust($color-primary, $lightness: 10%);
+      @include hover-shadow($color-primary);
+    }
+  }
+
+  &.secondary {
+    background-color: $color-secondary;
+    color: $color-text;
+    
+    &:hover:not(:disabled) {
+      background-color: color.adjust($color-secondary, $lightness: 10%);
+      @include hover-shadow($color-secondary);
+    }
+  }
+
+  &.outline {
+    background-color: transparent;
+    border: 2px solid $color-primary;
+    color: $color-primary;
+    
+    &:hover:not(:disabled) {
+      background-color: $color-primary;
+      color: $color-background-secondary;
+      @include hover-shadow($color-primary);
+    }
+  }
+
+  // Tamaños
+  &.small {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  &.medium {
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+  }
+
+  &.large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+} 

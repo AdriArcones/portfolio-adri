@@ -1,12 +1,14 @@
-
-import './Projects.scss'
+import "./Projects.scss";
+import CustomSection from "../../shared/components/custom-section/CustomSection";
 
 export const Projects = () => {
   return (
-    <section className="projects">
-      <div className="container">
-        {/* Contenido de Projects */}
-      </div>
-    </section>
-  )
-} 
+    <CustomSection
+      title="Proyectos"
+      subtitle="Desarrollador Full Stack"
+      id="projects"
+    >
+
+    </CustomSection>
+  );
+};

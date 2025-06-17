@@ -1,5 +1,55 @@
 @use '../../shared/styles/variables.scss' as *;
 @use '../../shared/styles/mixins.scss' as *;
 
+.navbar {
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 0;
+
+    z-index: $z-index-header;
+    @include flex (row, center, center);
+    
+
+    &__content {
+        @include glassmorphism;
+        border-radius: $border-radius-lg;
+        padding: $spacing-sm;
+        margin: $spacing-md;
+        max-width: 30rem;
+        width: 100%;
+        @include flex (row, space-between, center);
+    }
+
+    &__link {
+        font-size: 1.25rem;
+    }
+
+    &__link-container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        @include flex (row, center, center);
+    }
+
+    &__indicator {
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background: transparent;
+        z-index: -1;
+
+        @include transition;
+
+        &.active {
+            box-shadow: 0 0 40px 0 $color-primary;
+        }
+
+    }
+
+    
+}
+
 
 

@@ -2,38 +2,33 @@
 @use './mixins.scss' as *;
 
 :root {
-  --font-primary: #{$font-primary};
+  --font-primary: #{$title-font};
+  --font-secondary: #{$body-font};
   --color-primary: #{$color-primary};
   --color-secondary: #{$color-secondary};
   --color-background: #{$color-background};
-  --color-surface: #{$color-surface};
+  --color-background-secondary: #{$color-background-secondary};
+  --color-glass: #{$color-glass};
   --color-text: #{$color-text};
   --color-text-secondary: #{$color-text-secondary};
 }
 
+
 body {
   background-color: var(--color-background);
   color: var(--color-text);
-  font-size: $font-size-base;
   min-height: 100vh;
+  font-family: var(--font-primary);
 }
 
-.container {
-  @include container;
+// Tipografías
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
 }
 
-.section {
-  padding: $spacing-xl 0;
-  
-  @include respond-to(md) {
-    padding: $spacing-xl * 2 0;
-  }
-}
-
-// Utilidades
-.text-center { text-align: center; }
-.text-primary { color: var(--color-primary); }
-.text-secondary { color: var(--color-secondary); }
+p, span, a, li, button, input, textarea, select, label, small, strong, em, b, i, u, s, code, pre {
+  font-family: var(--font-secondary);
+} 
 
 // Animaciones
 .fade-in {
@@ -45,3 +40,31 @@ body {
   from { opacity: 0; }
   to { opacity: 1; }
 } 
+
+// Scrollbar
+/* Estilos para la scrollbar en Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: $border-radius-lg;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: $border-radius-lg;
+  
+  &:hover {
+    background: var(--color-secondary);
+  }
+}
+
+/* Estilos para Firefox */
+* {
+  scrollbar-width: 8px;
+  scrollbar-color: var(--color-primary) transparent;  
+}
+

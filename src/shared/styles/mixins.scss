@@ -1,35 +1,49 @@
-@use './variables.scss' as *;
+@use "./variables.scss" as *;
 
 // Media queries
 @mixin respond-to($breakpoint) {
   @if $breakpoint == sm {
-    @media (min-width: $breakpoint-sm) { @content; }
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
   }
   @if $breakpoint == md {
-    @media (min-width: $breakpoint-md) { @content; }
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
   }
   @if $breakpoint == lg {
-    @media (min-width: $breakpoint-lg) { @content; }
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
   }
   @if $breakpoint == xl {
-    @media (min-width: $breakpoint-xl) { @content; }
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
   }
 }
 
 // Flexbox
-@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
   display: flex;
-  flex-direction: $direction;
+  flex-flow: $direction $wrap;
   justify-content: $justify;
   align-items: $align;
 }
 
 // Glassmorphism
-@mixin glassmorphism($blur: 10px, $opacity: 0.1) {
+@mixin glassmorphism($blur: 10px, $opacity: 0.1) {  
   background: rgba(255, 255, 255, $opacity);
   backdrop-filter: blur($blur);
   -webkit-backdrop-filter: blur($blur);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, $opacity*1.5);
+}
+
+@mixin card {
+  border-radius: $border-radius-md;
+  padding: $spacing-xs $spacing-sm;
+  background-color: var(--color-background-alt);
 }
 
 // Transiciones
@@ -37,14 +51,18 @@
   transition: $property $duration $timing;
 }
 
-// Contenedor
+@mixin hover-shadow ($color: $color-primary) {
+  box-shadow: 0 0 40px 0 rgba($color, 0.7);
+}
 @mixin container {
   width: 100%;
-  max-width: 120rem;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 $spacing-md;
-  
+
   @include respond-to(md) {
     padding: 0 $spacing-lg;
   }
-} 
+}
+
+
