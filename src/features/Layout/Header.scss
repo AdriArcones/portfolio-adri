@@ -11,7 +11,7 @@
   right: 0;
   z-index: $z-index-header;
   transform: translateY(0);
-  transition: transform 0.3s ease-in-out;
+  @include transition;
 
   &--hidden {
     transform: translateY(-100%);
@@ -19,16 +19,24 @@
 
   &__content {
     @include flex(row, space-between, center);
-    @include glassmorphism;
+    @include container;
     border-radius: $border-radius-lg;
     padding: $spacing-md;
     width: 100%;
     max-height: 80px;
+    @include transition;
+    position: relative;
+
+    &:not(.header--top) {
+      @include glassmorphism;
+    }
   }
 
   &__logo {
+    width: 100%;
+    flex: 0 0 45%;
     height: 80px;
-    @include flex(column, center, center);
+    @include flex(column, center, flex-start);
     padding: $spacing-sm;
     cursor: pointer;
 
@@ -50,14 +58,55 @@
       max-height: 0;
       opacity: 0;
       @include transition;
-
       font-size: 0.7rem;
       font-weight: 600;
       color: $color-text;
 
       span {
         display: inline-block;
-        transform: scaleY(-1); /* También puedes usar scaleX(-1) */
+        transform: scaleY(-1); 
+      }
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    @include flex(row, space-between, center);
+    gap: $spacing-sm;
+
+    @include respond-to(sm) {
+      display: none;
+      position: fixed;
+      top: 100px;
+      left: 0;
+      right: 0;
+      background: $color-background;
+      border-radius: $border-radius-md;
+
+      padding: $spacing-md;
+      flex-direction: column;
+      align-items: stretch;
+      gap: $spacing-md;
+      animation: slideDown 0.3s ease-out forwards;
+
+      .header__nav {
+        @include flex(row, center, center);
+        
+        a {
+          font-size: 1.1rem;
+          gap: $spacing-sm;
+          padding: $spacing-sm;
+        }
+      }
+
+      .header__cta {
+        flex-direction: column;
+        align-items: stretch;
+        
+        button {
+          width: 100%;
+          padding: $spacing-sm;
+        }
       }
     }
   }
@@ -65,5 +114,42 @@
   &__nav {
     @include flex(row, center, center);
     gap: $spacing-sm;
+  }
+
+  &__cta {
+    @include flex(row, center, center);
+    gap: $spacing-sm;
+  }
+
+  &__menu-mobile {
+    display: none;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-80px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @include respond-to(sm) {
+    &__content {
+      padding: $spacing-sm;
+      border-radius: $border-radius-lg;
+    }
+
+    &__menu-mobile {
+      display: block;
+    }
+
+    &__content.menu-open {
+      .header__menu {
+        display: flex;
+      }
+    }
   }
 }

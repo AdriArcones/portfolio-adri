@@ -1,0 +1,152 @@
+@use "../../shared/styles/variables.scss" as *;
+@use "../../shared/styles/mixins.scss" as *;
+
+.hero {
+  &__container {
+    @include flex(row, center, center, nowrap);
+    width: 100%;
+    height: 100%;
+
+    @include respond-to(md) {
+      @include flex(column, center, center);
+    }
+  }
+
+  &__content {
+    @include flex(column, center, flex-start);
+    padding: $spacing-lg 0;
+    gap: $spacing-md;
+
+    @include respond-to(md) {
+      text-align: center;
+      @include flex(column, center, center);
+      order: 2;
+      gap: $spacing-sm;
+      padding: 0;
+    }
+
+    @include respond-to(sm) {
+      margin-top: 5rem;
+      @include glassmorphism;
+      border-radius: $border-radius-md;
+      padding: $spacing-sm $spacing-xs;
+      z-index: 2;
+    }
+  }
+
+  &__image {
+    flex: 0 0 50%;
+    width: 100%;
+    position: relative;
+    @include flex(column, center, center);
+    gap: $spacing-xl;
+    padding: $spacing-lg 0;
+
+    img {
+      width: 100%;
+      height: 750px;
+      object-fit: contain;
+      position: relative;
+
+      @include respond-to(md) {
+        height: 350px;
+      }
+    }
+
+    @include respond-to(sm) {
+      position: absolute;
+      top: 10vh;
+
+      @media (max-height: 700px) {
+        top: 0;
+      }
+    }
+  }
+
+  &__card {
+    max-width: 400px;
+    width: 100%;
+    position: absolute;
+    bottom: $spacing-xl;
+    left: 0;
+
+    &-quote-container {
+      margin-bottom: $spacing-sm;
+    }
+
+    &-quote {
+      max-width: 2rem;
+      max-height: 2rem;
+      object-fit: contain;
+
+      @include respond-to(md) {
+        max-width: 1.5rem;
+        max-height: 1.5rem;
+      }
+    }
+
+    @include respond-to(sm) {
+      display: none;
+    }
+  }
+
+  &__title-container {
+    @include flex(column, center, flex-start);
+  }
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: $color-text;
+    line-height: 1.2;
+
+    &--emphasis {
+      display: inline-block;
+      color: $color-primary;
+    }
+
+    @include respond-to(sm) {
+      font-size: 2.25rem;
+      text-align: center;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $color-text;
+    @include flex(row, center, center);
+    gap: $spacing-xs;
+
+    &-icon {
+      font-size: 1.5rem;
+      color: $color-primary;
+    }
+
+    @include respond-to(sm) {
+      margin-bottom: $spacing-xs;
+      order: 1;
+      width: 100%;
+      font-size: 0.8rem;
+    }
+  }
+
+  &__description {
+    font-size: 1.15rem;
+
+    @include respond-to(sm) {
+      font-size: 1rem;
+    }
+  }
+
+  &__buttons {
+    @include flex(row, center, center);
+    gap: $spacing-sm;
+  }
+
+  &__button {
+    @include respond-to(sm) {
+      padding: 0;
+    }
+  }
+}

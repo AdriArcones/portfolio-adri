@@ -1,5 +1,5 @@
 import "./Navbar.scss";
-import CustomLink from "../../shared/components/custom-link/CustomLink";
+import CustomButton from "../../shared/components/custom-button/CustomButton";
 import { House, ChartLine, Library, Wrench, Brain, Rocket } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -10,12 +10,12 @@ const NavLinks = () => {
 
   // Lista de enlaces con sus iconos y rutas
   const enlaces = [
-    { icono: <House />, ruta: "/#hero", id: "hero" },
-    { icono: <ChartLine />, ruta: "/#timeline", id: "timeline" },
-    { icono: <Library />, ruta: "/#projects", id: "projects" },
-    { icono: <Wrench />, ruta: "/#skills", id: "skills" },
-    { icono: <Brain />, ruta: "/#soft-skills", id: "soft-skills" },
-    { icono: <Rocket />, ruta: "/#contact", id: "contact" },
+    { icono: <House />, id: "hero" },
+    { icono: <ChartLine />, id: "timeline" },
+    { icono: <Library />, id: "projects" },
+    { icono: <Wrench />, id: "skills" },
+    { icono: <Brain />, id: "soft-skills" },
+    { icono: <Rocket />, id: "contact" },
   ];
 
   // Función que se ejecuta cuando el usuario hace scroll
@@ -32,6 +32,14 @@ const NavLinks = () => {
         setSeccionActiva(enlaces[i].id);
         break;
       }
+    }
+  };
+
+  // Función para manejar el click en un enlace
+  const handleClick = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -58,14 +66,14 @@ const NavLinks = () => {
             }`} 
           />
           
-          {/* Enlace con el icono */}
-          <CustomLink
-            to={enlace.ruta}
-            variant={seccionActiva === enlace.id ? 'primary' : 'secondary'}
-            className="navbar__link"
+          {/* Botón con el icono */}
+          <CustomButton
+            variant="text"
+            onClick={() => handleClick(enlace.id)}
+            className={`navbar__link ${seccionActiva === enlace.id ? 'navbar__link--active' : ''}`}
           >
             {enlace.icono}
-          </CustomLink>
+          </CustomButton>
         </div>
       ))}
     </>

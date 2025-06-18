@@ -30,7 +30,7 @@ const CustomButton = ({
 
 CustomButton.propTypes = {
   children: PropTypes.node.isRequired,
-  variant: PropTypes.oneOf(["primary", "secondary", "outline"]),
+  variant: PropTypes.oneOf(["primary", "secondary", "outline", "text"]),
   size: PropTypes.oneOf(["small", "medium", "large"]),
   onClick: PropTypes.func,
   disabled: PropTypes.bool,

@@ -10,19 +10,7 @@ const CustomLink = ({
   className = '',
   external = false,
 }) => {
-  const isHashLink = to.startsWith('/#');
-  
-  const handleHashClick = (e) => {
-    if (isHashLink) {
-      e.preventDefault();
-      const elementId = to.replace('/#', '');
-      const element = document.getElementById(elementId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
-
+  const Component = external ? 'a' : Link;
   const linkProps = external
     ? {
         href: to,
@@ -31,10 +19,7 @@ const CustomLink = ({
       }
     : {
         to,
-        onClick: handleHashClick,
       };
-
-  const Component = external ? 'a' : Link;
 
   return (
     <Component

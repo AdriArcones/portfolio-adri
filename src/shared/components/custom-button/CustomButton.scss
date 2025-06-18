@@ -50,6 +50,24 @@
     }
   }
 
+  &.text {
+    background-color: transparent;
+    border: none;
+    color: $color-text;
+    padding: 0 !important;
+    
+    &:hover:not(:disabled) {
+      color: color.adjust($color-primary, $lightness: 10%);
+    }
+
+    .custom-button__icon {
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
   // Tamaños
   &.small {
     padding: 0.6rem 1.2rem;

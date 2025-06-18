@@ -19,10 +19,20 @@
         max-width: 30rem;
         width: 100%;
         @include flex (row, space-between, center);
+
+        @include respond-to(sm) {
+            margin: $spacing-sm $spacing-md;
+        }
     }
 
     &__link {
         font-size: 1.25rem;
+
+        &--active {
+            svg {
+                color:$color-primary ;
+            }
+        }
     }
 
     &__link-container {
