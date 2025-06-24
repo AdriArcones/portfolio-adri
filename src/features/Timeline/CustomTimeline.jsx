@@ -1,7 +1,6 @@
-
-
-import { useMotionValueEvent, useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+// eslint-disable-next-line no-unused-vars
+import { useScroll, useTransform, motion } from "framer-motion";
 import './Timeline.scss';
 
 export default function CustomTimeline({ data }) {
@@ -26,29 +25,20 @@ export default function CustomTimeline({ data }) {
 
   return (
     <div className="timeline-container" ref={containerRef}>
-      <div className="timeline-header">
-        <h2 className="timeline-title">
-          Changelog from my journey
-        </h2>
-        <p className="timeline-description">
-          I've been working on Aceternity for the past 2 years. Here's a timeline of my journey.
-        </p>
-      </div>
-      
       <div ref={ref} className="timeline-content">
         {data.map((item, index) => (
-          <div key={index} className="timeline-item">
-            <div className="timeline-item-header">
-              <div className="timeline-dot-container">
-                <div className="timeline-dot" />
+          <div key={index} className="timeline__item">
+            <div className="timeline__item-header">
+              <div className="timeline__dot-container">
+                <div className="timeline__dot" />
               </div>
-              <h3 className="timeline-item-title timeline-item-title--desktop">
+              <h3 className="timeline__item-title timeline__item-title--desktop">
                 {item.title}
               </h3>
             </div>
             
-            <div className="timeline-item-content">
-              <h3 className="timeline-item-title timeline-item-title--mobile">
+            <div className="timeline__item-content">
+              <h3 className="timeline__item-title timeline__item-title--mobile">
                 {item.title}
               </h3>
               {item.content}

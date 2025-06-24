@@ -2,6 +2,7 @@
 @use "../../shared/styles/mixins.scss" as *;
 
 .hero {
+
   &__container {
     @include flex(row, center, center, nowrap);
     width: 100%;

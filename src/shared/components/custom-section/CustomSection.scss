@@ -2,10 +2,12 @@
 @use '../../styles/mixins.scss' as *;
 
 .custom-section {
+  @include flex(column, center, center);
   padding: $spacing-lg 0;
   width: 100%;
-  height: 100vh;
-
+  min-height: 100vh;
+  height: 100%;
+  
   &.full-width {
     .custom-section__container {
       max-width: none;

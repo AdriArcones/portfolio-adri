@@ -1,60 +1,192 @@
-
-import './Timeline.scss'
-import CustomSection from '../../shared/components/custom-section/CustomSection'
-import  CustomTimeline  from './CustomTimeline'
-
+import "./Timeline.scss";
+import CustomSection from "../../shared/components/custom-section/CustomSection";
+import CustomTimeline from "./CustomTimeline";
+import CustomLink from "../../shared/components/custom-link/CustomLink";
+import ElementorImage from "../../assets/images/timeline/elementor.png";
+import WooCommerceImage from "../../assets/images/timeline/woocommerce.JPG";
+import HTMLImage from "../../assets/images/timeline/html.png";
+import IllustratorImage from "../../assets/images/timeline/illustrator.JPG";
+import UniversidadImage from "../../assets/images/timeline/universidad.jpeg";
+import InmobiliariaImage from "../../assets/images/timeline/inmobiliaria.JPG";
+import ShopifyImage from "../../assets/images/timeline/shopify.JPG";
+import GraduacionImage from "../../assets/images/timeline/graduacion.jpeg";
+import VASSImage from "../../assets/images/timeline/vass.png";
+import NightlyImage from "../../assets/images/timeline/nightly.JPG";
 
 const timelineData = [
   {
     title: "2021",
-    content: 
-    <div>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias architecto aut et mollitia consectetur reiciendis dolorem delectus! Aliquam provident rem a ea? Quod praesentium nobis molestias aliquid est? Itaque, ipsa.
-      Harum excepturi nemo nam provident quod consectetur, ullam minus, similique adipisci magnam, officia ratione repudiandae dicta. Molestiae placeat fuga animi modi soluta qui cum sed quasi, consequuntur sequi fugiat quae.
-      Rem, nisi cumque sunt corrupti eligendi non aliquam vel quos ullam, ratione vitae perferendis molestias hic beatae optio odio labore, ipsum qui magni quidem ex? Sequi minima culpa nemo reprehenderit!
-      Saepe ex modi reiciendis mollitia molestiae, explicabo aspernatur vel accusamus? Unde placeat distinctio vel nulla necessitatibus iusto, facere animi fugiat impedit enim magnam rerum ducimus doloribus numquam fuga illo dolores?
-      Deleniti iusto asperiores nemo a saepe quasi numquam esse, facilis obcaecati! Autem molestiae blanditiis aliquid consectetur, eos consequatur. Rem ducimus modi delectus nulla laudantium? Non in qui aliquid rerum harum.
-      Reprehenderit magnam dicta quas ipsa recusandae accusamus a, atque sapiente deserunt quia deleniti debitis ab rem voluptatum provident tenetur suscipit. Mollitia in perferendis aspernatur ipsam enim. Voluptate quaerat sapiente ducimus?
-      Molestias fuga accusantium unde perspiciatis maxime ipsum ab rem nam quaerat mollitia sed officiis delectus tenetur nostrum soluta et, explicabo, corporis voluptas incidunt temporibus architecto. Itaque deleniti fugiat numquam unde.
-      Expedita consectetur tempora reprehenderit a rem pariatur fugiat consequuntur culpa illo velit ipsa tempore delectus temporibus hic, voluptate ab vel nisi! Dolor mollitia eum laboriosam inventore at accusamus, illo nobis!
-      Officiis eum explicabo laborum minus ipsam nobis veniam possimus maiores fuga, fugiat sed reiciendis nam optio! Tempore, accusamus laboriosam ipsa vitae, sunt vel laudantium aliquam in veniam hic numquam dolores?
-      Eos harum ipsam soluta consectetur eaque qui molestias, explicabo mollitia perferendis sunt maiores quis ducimus veniam, aspernatur numquam ex error a amet iste ipsum. Odio nobis minus qui tenetur veritatis?
-      Magnam similique necessitatibus laboriosam quibusdam sint nesciunt consectetur ex eius quod vitae ab nisi libero quae assumenda laudantium nostrum nam vero tenetur optio, distinctio numquam voluptas perferendis. Est, aliquam repellendus?
-      Ad aspernatur deserunt nulla pariatur porro, ducimus doloremque! Laboriosam, temporibus aspernatur excepturi delectus consectetur recusandae. In illo asperiores similique veritatis nihil quo aperiam, ab at fugit sapiente ex commodi assumenda?
-      Aut non asperiores aperiam esse sequi iusto, corrupti ipsa laborum? Debitis suscipit est voluptates optio omnis tempore modi quisquam nam voluptatem, itaque numquam hic odit deleniti sed accusamus impedit reprehenderit.
-      Porro velit earum dolor adipisci corporis hic natus architecto, aut sapiente corrupti perferendis ex incidunt doloremque officia aliquam eveniet ut nobis. Impedit odio distinctio optio aut quo eos cupiditate quisquam.
-      Cum explicabo iste dicta vel voluptatibus amet placeat nulla. Sed, hic et nesciunt repellendus tempore deleniti eveniet impedit voluptatibus tempora ad voluptates ipsa nam iste minima aliquid quia eos expedita?
-      Natus corporis impedit accusamus ullam recusandae vero voluptatum ut, rem quia assumenda atque tempore eius incidunt tenetur labore repudiandae nulla voluptatem facilis at. Consequuntur repellat molestias accusantium dolor fugiat exercitationem?
-      Repudiandae odio, eligendi officiis veniam id earum vero. Iusto aperiam in corporis veniam amet quasi! Ducimus dolorum aliquid corrupti iure facilis sunt! Molestias laudantium eligendi praesentium consequatur expedita maxime dolorem!
-      Quidem placeat, rem temporibus enim eligendi voluptate id voluptas? Quasi sed, sint, numquam aspernatur, qui hic quos fugit nobis eum magni dicta. Architecto, distinctio. Quod harum autem dolore pariatur delectus.
-      Mollitia illo iure inventore porro! Aliquid nostrum ab commodi! Sed delectus nostrum recusandae cumque, totam qui asperiores magnam quis accusantium explicabo voluptates, neque vitae provident commodi, possimus perferendis incidunt dolore?
-      Sint blanditiis ipsa reiciendis vero iusto nulla maiores nemo! Tenetur optio itaque illum ratione quod dolores sit quis iste, pariatur harum maxime ea? Laboriosam id ipsa eius culpa, praesentium soluta.</p>
-    </div>
+    content: (
+      <div className="timeline__content-year">
+        <div className="timeline__content">
+          <p className="timeline__text">
+            Mientras cursaba <b>4º de la ESO</b> un amigo me pidió ayuda para montar
+            una <b>tienda online</b>. Yo siempre había destacado en clase por mis
+            habilidades con la <b>tecnología</b>, no obstante nunca había tocado
+            <b> WordPress</b>, <b>WooCommerce</b> ni hecho una web. Podría haber dicho que no.
+            Pero dije que sí. Porque aunque no supiera cómo, sabía que podía
+            averiguarlo. Es por ello que me lancé a la aventura, confiando en
+            que el camino se haría al andar. Y así fue como descubrí un <b>mundo
+            nuevo</b>… y que me encantaba construir en él. En esta experiencia
+            aprendí sobre <b>WordPress</b>, <b>Elementor</b> y conceptos básicos de
+            <b> maquetación web</b>.
+          </p>
+          <div className="timeline__image-container">
+            <img src={WooCommerceImage} alt="WooCommerce" />
+            <img src={ElementorImage} alt="Elementor" />
+          </div>
+        </div>
+      </div>
+    ),
   },
   {
     title: "2022",
-    content: <div>Inicio de mi carrera...</div>
+    content: (
+      <div className="timeline__content-year">
+        <div className="timeline__content">
+          <p className="timeline__text">
+            Motivado por esa primera experiencia, empecé a bucear por YouTube y
+            a aprender por mi cuenta sobre <b>HTML</b>, <b>CSS</b> y <b>Bootstrap</b>. Me pasaba
+            horas probando cosas que no entendía al principio, pero que
+            empezaban a tener sentido al verlas en pantalla. Como reto personal,
+            construí la interfáz de un <b>ecommerce ficticio</b> desde cero. No era
+            perfecto, pero funcionaba… y lo había hecho yo. Y eso me empujó a
+            seguir.
+          </p>
+          <div className="timeline__image-container">
+            <img src={HTMLImage} alt="HTML" />
+          </div>
+        </div>
+      </div>
+    ),
   },
   {
     title: "2023",
-    content: <div>Mi primer proyecto...</div>
+    content: (
+      <div className="timeline__content-year">
+        <div className="timeline__content">
+          <p className="timeline__text">
+            Descubrí que el <b>diseño</b> también tenía mucho que decir en todo esto.
+            Aprendí a usar <b>Adobe Illustrator</b> y <b>Photoshop</b> por mi cuenta,
+            fascinado por la posibilidad de construir <b>experiencias visuales</b> que
+            transmitieran algo. Empecé a leer sobre <b>UX</b> y sobre cómo el diseño no
+            es solo <b>estética</b>, sino también lógica y empatía. Comprendí de esa
+            parte invisible del diseño: la que no se ve, pero se siente.
+          </p>
+          <div className="timeline__image-container">
+            <img src={IllustratorImage} alt="Illustrator" />
+          </div>
+        </div>
+      </div>
+    ),
   },
   {
-    title: "2024", 
-    content: <div>Grandes avances...</div>
+    title: "2024",
+    content: (
+      <div className="timeline__content-year">
+        <div className="timeline__content">
+          <p className="timeline__text">
+            Decidí dar el siguiente paso: me matriculé en el grado de <b>Desarrollo
+            de Aplicaciones Web</b> en la <b>Universidad Europea</b>. Empecé a consolidar
+            todo lo que ya sabía de <b>HTML</b> y <b>CSS</b>, y aprendí nuevas herramientas
+            como <b>Java</b>, <b>SQL</b>, <b>Linux</b> y <b>Git</b>.
+          </p>
+          <div className="timeline__image-container">
+            <img src={UniversidadImage} alt="Universidad" />
+          </div>
+        </div>
+
+        <div className="timeline__content">
+          <p className="timeline__text">
+            Ese mismo verano, mis conocimientos de <b>diseño</b> me llevaron a trabajar
+            en una <b>agencia inmobiliaria</b> creando su <b>logo</b> y materiales
+            promocionales. No solo me gustó, sino que reafirmó que podía aportar
+            <b> valor real</b>.
+          </p>
+          <div className="timeline__image-container">
+            <img src={InmobiliariaImage} alt="Inmobiliaria" />
+          </div>
+        </div>
+
+        <div className="timeline__content">
+          <p className="timeline__text">
+            También ayudé a lanzar una <b>tienda Shopify</b> para un conocido, que
+            comenzó a generar <b>ventas</b> desde sus primeros días. Ver que algo que
+            yo había construido funcionaba en el <b>mundo real</b> fue un antes y un
+            después.
+          </p>
+          <div className="timeline__image-container">
+            <img src={ShopifyImage} alt="Shopify" />
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "2025",
+    content: (
+      <div className="timeline__content-year">
+        <div className="timeline__content">
+          <p className="timeline__text">
+            Fue durante mis <b>prácticas</b> en <b>VASS</b> cuando todo hizo clic. Me
+            asignaron a un proyecto en <b>React</b> sin saber usarlo… así que lo
+            aprendí sobre la marcha. Me lancé de nuevo. Y funcionó. Descubrí una
+            forma de programar que se sentía como construir <b>piezas de lego
+            inteligentes</b>. Me fascinó. Y confirmé que no necesito saberlo todo de
+            antemano: solo tener el <b>hambre de averiguarlo</b>.
+          </p>
+          <div className="timeline__image-container">
+            <img src={VASSImage} alt="VASS" />
+          </div>
+        </div>
+
+        <div className="timeline__content">
+          <p className="timeline__text">
+            Como <b>trabajo final de grado</b>, quise ir más allá de una entrega
+            académica. Junto a mi amigo{" "}
+            <CustomLink
+              external
+              to="https://www.linkedin.com/in/daniel-c-5690892a2/"
+            >
+              Dani Clavel
+            </CustomLink>{" "}
+            —que, como yo, aprendió backend con Node.js por su cuenta— decidimos
+            crear algo real: <b>Nightly</b>, una <b>red social</b> para descubrir y compartir
+            planes de <b>ocio nocturno</b>. Yo me encargué del <b>frontend</b> con <b>React</b>,
+            aplicando todo lo que había aprendido y mucho más de lo que aún no
+            sabía, resolviendo problemas con la motivación de estar construyendo
+            algo nuestro. Nightly no fue solo un proyecto: fue la prueba de que cuando el
+            conocimiento se une con las ganas, cualquier idea puede tomar forma.
+          </p>
+          <div className="timeline__image-container">
+            <img src={NightlyImage} alt="Nightly" />
+          </div>
+        </div>
+
+        <div className="timeline__content">
+          <p className="timeline__text">
+            Finalmente me gradué como <b>desarrollador web</b> con una base sólida en
+            tecnologías como <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, <b>PHP</b> y <b>SQL</b>, especializado en
+            <b> frontend</b> con <b>React</b>.
+          </p>
+          <div className="timeline__image-container">
+            <img src={GraduacionImage} alt="Graduacion" />
+          </div>
+        </div>
+      </div>
+    ),
   },
 ];
-
 
 export const Timeline = () => {
   return (
     <CustomSection
       title="Timeline"
-      subtitle="Desarrollador Full Stack"
+      subtitle="Mi viaje como desarrollador web"
       id="timeline"
       className="timeline__section"
     >
       <CustomTimeline data={timelineData} />
     </CustomSection>
-  )
-} 
+  );
+};
