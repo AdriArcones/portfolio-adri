@@ -32,6 +32,18 @@
   align-items: $align;
 }
 
+// Grid
+@mixin grid($columns: 1, $rows: 1, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-template-rows: repeat($rows, 1fr);
+  gap: $gap;
+
+  @include respond-to(sm) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 // Glassmorphism
 @mixin glassmorphism($blur: 10px, $opacity: 0.1) {  
   background: rgba(255, 255, 255, $opacity);

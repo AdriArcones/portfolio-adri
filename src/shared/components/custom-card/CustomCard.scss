@@ -5,6 +5,8 @@
   @include card;
   @include transition;
   overflow: hidden;
+  padding: $spacing-md;
+
 
   &:hover {
     transform: translateY(-4px);
@@ -33,9 +35,6 @@
     margin-bottom: $spacing-xs;
   }
 
-  &__content {
-    padding: $spacing-sm;
-  }
 
   &__title {
     font-family: $title-font;
@@ -50,10 +49,4 @@
     color: $color-text-secondary;
   }
 
-  &__body {
-    font-family: $body-font;
-    color: $color-text;
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
 } 

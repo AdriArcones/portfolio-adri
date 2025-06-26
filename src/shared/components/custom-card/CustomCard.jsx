@@ -4,8 +4,8 @@ import "./CustomCard.scss";
 
 const CustomCard = ({
   children,
-  title,
-  subtitle,
+  title = "",
+  subtitle = "",
   className = "",
   onClick,
   glass = false,
@@ -18,14 +18,14 @@ const CustomCard = ({
       } ${className}`}
       onClick={onClick}
     >
-      <div className="custom-card__content">
+      {(title || subtitle) && (
         <div className="custom-card__header">
           {title && <h3 className="custom-card__title">{title}</h3>}
           {subtitle && <p className="custom-card__subtitle">{subtitle}</p>}
         </div>
+      )}
 
-        <div className="custom-card__body">{children}</div>
-      </div>
+      {children}
     </div>
   );
 };
