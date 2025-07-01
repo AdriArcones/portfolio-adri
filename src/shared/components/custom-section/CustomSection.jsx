@@ -7,12 +7,12 @@ const CustomSection = ({
   title,
   subtitle,
   className = '',
-  background = 'default',
+  background = '',
   fullWidth = false,
   id,
 }) => {
   return (
-    <section className={`custom-section ${background} ${fullWidth ? 'full-width' : ''} ${className}`} id={id}>
+    <section className={`custom-section ${background ? background : ''} ${fullWidth ? 'full-width' : ''} ${className}`} id={id}>
       <div className="custom-section__container">
         {(title || subtitle) && (
           <div className="custom-section__header">
@@ -33,7 +33,7 @@ CustomSection.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   className: PropTypes.string,
-  background: PropTypes.oneOf(['default', 'primary', 'secondary', 'glass']),
+  background: PropTypes.oneOf(['', 'default', 'primary', 'secondary', 'glass']),
   fullWidth: PropTypes.bool,
   id: PropTypes.string,
 };

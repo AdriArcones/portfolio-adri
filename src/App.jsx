@@ -10,7 +10,7 @@ import BackgroundBlobs from "./shared/components/custom-blobs/BackgroundBlobs";
 function App() {
   return (
     <Layout>
-       {/* <BackgroundBlobs
+       <BackgroundBlobs
           blobs={[
             {
               color: "pink",
@@ -29,7 +29,7 @@ function App() {
               position: "bottom-right",
             },
           ]}
-        /> */}
+        />
       <Hero />
       <Timeline />
       <Projects />

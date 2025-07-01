@@ -20,17 +20,30 @@ const NavLinks = () => {
 
   // Función que se ejecuta cuando el usuario hace scroll
   const detectarSeccionActiva = () => {
-    // Calculamos la posición del scroll
-    const posicionScroll = window.scrollY + window.innerHeight / 3;
+    const windowHeight = window.innerHeight;
+    const threshold = windowHeight * 0.3; // 30% del viewport
 
     // Recorremos las secciones de abajo hacia arriba
     for (let i = enlaces.length - 1; i >= 0; i--) {
       const seccion = document.getElementById(enlaces[i].id);
       
-      // Si encontramos una sección que está en la vista
-      if (seccion && seccion.offsetTop <= posicionScroll) {
-        setSeccionActiva(enlaces[i].id);
-        break;
+      if (seccion) {
+        const rect = seccion.getBoundingClientRect();
+        
+        // Para la sección Skills, solo considerar cuando está centrada
+        if (enlaces[i].id === "skills") {
+          // Skills solo está activa cuando está centrada (top <= 0 y bottom >= windowHeight)
+          if (rect.top <= 0 && rect.bottom >= windowHeight) {
+            setSeccionActiva(enlaces[i].id);
+            break;
+          }
+        } else {
+          // Para otras secciones, usar la lógica normal
+          if (rect.top <= threshold && rect.bottom >= threshold) {
+            setSeccionActiva(enlaces[i].id);
+            break;
+          }
+        }
       }
     }
   };
