@@ -1,6 +1,6 @@
 import "./Navbar.scss";
 import CustomButton from "../../shared/components/custom-button/CustomButton";
-import { House, ChartLine, Library, Wrench, Brain, Rocket } from "lucide-react";
+import { House, ChartLine, Library, Wrench, Rocket, MessageSquareQuote } from "lucide-react";
 import { useEffect, useState } from "react";
 
 // Componente que maneja los enlaces de navegación
@@ -14,7 +14,7 @@ const NavLinks = () => {
     { icono: <ChartLine />, id: "timeline" },
     { icono: <Library />, id: "projects" },
     { icono: <Wrench />, id: "skills" },
-    { icono: <Brain />, id: "soft-skills" },
+    { icono: <MessageSquareQuote />, id: "reviews" },
     { icono: <Rocket />, id: "contact" },
   ];
 

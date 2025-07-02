@@ -1,13 +1,12 @@
-
-import './SoftSkills.scss'
+import './Reviews.scss'
 import CustomSection from '../../shared/components/custom-section/CustomSection'
 
-export const SoftSkills = () => {
+export const Reviews = () => {
   return (
     <CustomSection
-      title="Soft Skills"
+      title="Reviews"
       subtitle="Desarrollador Full Stack" 
-      id="soft-skills"
+      id="reviews"
     >
 
     </CustomSection>

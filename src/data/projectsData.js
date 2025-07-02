@@ -17,5 +17,6 @@ export const projectsData = [
     link: "https://www.google.com",
     github: "https://www.google.com",
     tags: ["React", "Sass"]
-  }
+  },
+
 ]; 

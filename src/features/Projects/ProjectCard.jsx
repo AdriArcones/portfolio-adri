@@ -3,16 +3,24 @@ import CustomChip from "../../shared/components/custom-chip/CustomChip";
 import CustomButton from "../../shared/components/custom-button/CustomButton";
 import { Github } from "lucide-react";
 
-export const ProjectCard = ({ title, description, image, link, github, tags }) => {
+export const ProjectCard = ({
+  title,
+  description,
+  image,
+  link,
+  github,
+  tags,
+}) => {
   return (
     <CustomCard glass glow className="project-card__content">
+      <div className="project-card__image-container">
+        <img src={image} alt={title} className="project-card__image" />
+      </div>
+
+      <div className="project-card__content-container">
         <div className="project-card__title-container">
           <h3 className="project-card__title">{title}</h3>
           <p className="project-card__description">{description}</p>
-        </div>
-
-        <div className="project-card__image-container">
-          <img src={image} alt={title} className="project-card__image" />
         </div>
 
         <div className="project-card__buttons">
@@ -37,9 +45,10 @@ export const ProjectCard = ({ title, description, image, link, github, tags }) =
 
         <div className="project-card__tags">
           {tags.map((tag) => (
-            <CustomChip key={tag} label={tag} color="secondary" size="sm"/>
+            <CustomChip key={tag} label={tag} color="secondary" size="sm" />
           ))}
         </div>
+      </div>
     </CustomCard>
   );
 };

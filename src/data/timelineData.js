@@ -64,10 +64,6 @@ export const timelineData = [
       {
         text: "Como <b>trabajo final de grado</b>, quise ir más allá de una entrega académica. Junto a mi amigo Dani Clavel —que, como yo, aprendió backend con Node.js por su cuenta— decidimos crear algo real: <b>Nightly</b>, una <b>red social</b> para descubrir y compartir planes de <b>ocio nocturno</b>. Yo me encargué del <b>frontend</b> con <b>React</b>, aplicando todo lo que había aprendido y mucho más de lo que aún no sabía, resolviendo problemas con la motivación de estar construyendo algo nuestro. Nightly no fue solo un proyecto: fue la prueba de que cuando el conocimiento se une con las ganas, cualquier idea puede tomar forma.",
         images: [NightlyImage],
-        link: {
-          text: "Dani Clavel",
-          url: "https://www.linkedin.com/in/daniel-c-5690892a2/"
-        }
       },
       {
         text: "Finalmente me gradué como <b>desarrollador web</b> con una base sólida en tecnologías como <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, <b>PHP</b> y <b>SQL</b>, especializado en <b>frontend</b> con <b>React</b>.",
