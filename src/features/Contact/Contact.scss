@@ -1,3 +1,46 @@
 @use '../../shared/styles/variables.scss' as *;
 @use '../../shared/styles/mixins.scss' as *;
 
+.form{
+    @include flex(column, space-between, center, nowrap);
+    gap: $spacing-md;
+    width: 100%;
+    max-width: 500px;
+
+    &__item{
+        @include flex(column, space-between, flex-start, nowrap);
+        gap: $spacing-xs;
+        width: 100%;
+    }
+
+    &__input{
+        width: 100%;
+
+        &--textarea{
+            resize: none;
+            height: 100px;
+            border-radius: $border-radius-md;
+        }
+
+        &--error{
+            border: 1px solid $color-error;
+        }
+    }
+
+    &__button{
+        width: 100%;
+    }
+
+    &__feedback{
+        @include flex(row, flex-start, center, nowrap);
+        gap: $spacing-xs;
+
+        &--error{
+            color: $color-error;
+        }
+
+        &--success{
+            color: $color-secondary;
+        }
+    }
+}
