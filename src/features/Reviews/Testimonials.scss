@@ -1,0 +1,80 @@
+@use '../../shared/styles/variables.scss' as *;
+@use '../../shared/styles/mixins.scss' as *;
+
+.testimonials-carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  
+}
+
+.testimonials-carousel {
+  @include flex(row, flex-start, center, nowrap);
+  gap: $spacing-md;
+  animation: scroll 8s linear infinite; 
+  
+  &.paused {
+    animation-play-state: paused;
+  }
+  
+  // Responsive: ajustar gap y velocidad
+  @media (max-width: 768px) {
+    gap: $spacing-lg;
+    animation: scroll 5s linear infinite; // Aún más rápido en móvil: 5s
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+// Estilos para las tarjetas individuales
+.testimonials-card {
+  @include flex(column, space-between, flex-start, nowrap);
+  gap: $spacing-sm;
+  width: 300px; // Ancho fijo para desktop
+  height: 200px; // Altura fija para uniformidad
+  flex-shrink: 0;
+  
+  @media (max-width: 768px) {
+    width: 280px; // Ancho fijo para móvil
+    height: 180px; // Altura fija para móvil
+  }
+
+  &__header {
+    @include flex(row, space-between, center, nowrap);
+    gap: $spacing-sm;
+    flex-shrink: 0;
+
+    &-info {
+      @include flex(column, center, flex-start, nowrap);
+
+      &-name {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &__content {
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    
+    p {
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
+
+  &__avatar {
+    @include flex(row, center, center, nowrap);
+    flex-shrink: 0;
+  }
+}

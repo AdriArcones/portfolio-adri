@@ -1,0 +1,46 @@
+@use '../../../shared/styles/variables.scss' as *;
+@use '../../../shared/styles/mixins.scss' as *;
+
+.custom-avatar {
+  @include flex(row, center, center, nowrap);
+  border-radius: 50%;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  user-select: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &__initials {
+    line-height: 1;
+  }
+
+  // Tamaños
+  &--small {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  &--medium {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  &--large {
+    width: 64px;
+    height: 64px;
+    font-size: 20px;
+  }
+
+  &--xlarge {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+  }
+}

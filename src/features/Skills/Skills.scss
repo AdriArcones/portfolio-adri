@@ -5,6 +5,10 @@
   position: relative;
   width: 100%;
   height: 300vh;
+
+  @include respond-to(md) {
+    height: 100vh;
+  }
 }
 
 .skills-section {
@@ -48,7 +52,7 @@
     position: relative;
     top: auto;
     transform: none;
-    margin-bottom: $spacing-xl;
+    margin-bottom: $spacing-md;
   }
 }
 
@@ -60,9 +64,9 @@
   padding-bottom: 100vh;
   
   @include respond-to(md) {
-    padding-top: $spacing-xl;
-    padding-bottom: $spacing-xl;
-    gap: $spacing-lg;
+    padding-top: $spacing-md;
+    padding-bottom: $spacing-md;
+    gap: $spacing-md;
   }
 }
 
@@ -74,7 +78,7 @@
   justify-content: center;
   
   @include respond-to(md) {
-    height: 50vh;
+    height: 30vh;
   }
 
 }
