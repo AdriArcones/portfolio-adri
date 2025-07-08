@@ -7,6 +7,10 @@
     width: 100%;
     max-width: 500px;
 
+    @include respond-to(sm){
+        margin-bottom: 5rem;
+    }
+
     &__item{
         @include flex(column, space-between, flex-start, nowrap);
         gap: $spacing-xs;

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-// eslint-disable-next-line no-unused-vars
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform } from "framer-motion";
 import './Timeline.scss';
+import TimelineItem from './components/TimelineItem';
 
 export default function CustomTimeline({ data }) {
   const ref = useRef(null);
@@ -13,7 +13,7 @@ export default function CustomTimeline({ data }) {
       const rect = ref.current.getBoundingClientRect();
       setHeight(rect.height);
     }
-  }, [ref]);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -26,31 +26,18 @@ export default function CustomTimeline({ data }) {
   return (
     <div className="timeline-container" ref={containerRef}>
       <div ref={ref} className="timeline-content">
-        {data.map((item, index) => (
-          <div key={index} className="timeline__item">
-            <div className="timeline__item-header">
-              <div className="timeline__dot-container">
-                <div className="timeline__dot" />
-              </div>
-              <h3 className="timeline__item-title timeline__item-title--desktop">
-                {item.title}
-              </h3>
-            </div>
-            
-            <div className="timeline__item-content">
-              <h3 className="timeline__item-title timeline__item-title--mobile">
-                {item.title}
-              </h3>
-              {item.content}
-            </div>
-          </div>
+        {data.map((yearData, index) => (
+          <TimelineItem 
+            key={index}
+            yearData={yearData}
+          />
         ))}
         
         <div 
           className="timeline-line"
           style={{ height: height + "px" }}
         >
-          <motion.div
+          <div
             className="timeline-line-progress"
             style={{
               height: heightTransform,
@@ -61,4 +48,4 @@ export default function CustomTimeline({ data }) {
       </div>
     </div>
   );
-};
+}

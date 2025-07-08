@@ -1,0 +1,140 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+.custom-tooltip {
+  position: relative;
+  display: inline-block;
+
+  &__content {
+    position: absolute;
+    background: $color-background;
+    color: $color-text;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-md;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+
+    &.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    // Posición superior (por defecto)
+    &.top {
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: $spacing-xs;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 6px solid transparent;
+        border-top-color: $color-background;
+      }
+
+      &.visible {
+        transform: translateY(-10px) translateX(-50%);
+      }
+    }
+
+    // Posición inferior
+    &.bottom {
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: $spacing-xs;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 6px solid transparent;
+        border-bottom-color: $color-background;
+      }
+
+      &.visible {
+        transform: translateY(10px) translateX(-50%);
+      }
+    }
+
+    // Posición izquierda
+    &.left {
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-right: $spacing-xs;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 6px solid transparent;
+        border-left-color: $color-background;
+      }
+
+      &.visible {
+        transform: translateX(-10px) translateY(-50%);
+      }
+    }
+
+    // Posición derecha
+    &.right {
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: $spacing-xs;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 6px solid transparent;
+        border-right-color: $color-background;
+      }
+
+      &.visible {
+        transform: translateX(10px) translateY(-50%);
+      }
+    }
+  }
+
+  // Variante que se activa por hover
+  &:hover {
+    .custom-tooltip__content {
+      opacity: 1;
+      visibility: visible;
+
+      &.top {
+        transform: translateY(-10px) translateX(-50%);
+      }
+
+      &.bottom {
+        transform: translateY(10px) translateX(-50%);
+      }
+
+      &.left {
+        transform: translateX(-10px) translateY(-50%);
+      }
+
+      &.right {
+        transform: translateX(10px) translateY(-50%);
+      }
+    }
+  }
+} 

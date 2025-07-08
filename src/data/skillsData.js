@@ -1,24 +1,29 @@
-import HTMLImage from "../assets/images/skills/html.png";
-import CSSImage from "../assets/images/skills/css.png";
-import JavaScriptImage from "../assets/images/skills/js.png";
-import ReactImage from "../assets/images/skills/react.png";
-import SassImage from "../assets/images/skills/sass.png";
-import BootstrapImage from "../assets/images/skills/bootstrap.png";
-import MaterialUIImage from "../assets/images/skills/material-ui.png";
-import WordPressImage from "../assets/images/skills/wordpress.png";
-import ShopifyImage from "../assets/images/skills/shopify.png";
-import TypeScriptImage from "../assets/images/skills/typescript.png";
-import NodeJSImage from "../assets/images/skills/node-js.png";
-import AstroImage from "../assets/images/skills/astro.png";
-import TailwindImage from "../assets/images/skills/tailwind.png";
-import FigmaImage from "../assets/images/skills/figma.png";
-import PhotoshopImage from "../assets/images/skills/adobe-photoshop.png";
-import IllustratorImage from "../assets/images/skills/adobe-illustrator.png";
-import ScrumImage from "../assets/images/skills/scrumorg.svg";
-import GitImage from "../assets/images/skills/git.png";
-import GitHubImage from "../assets/images/skills/github.png";
-import VisualStudioCodeImage from "../assets/images/skills/visual-studio.png";
-import CursorImage from "../assets/images/skills/cursor.png";
+import HTMLImage from "../assets/images/skills/html.svg";
+import CSSImage from "../assets/images/skills/css.svg";
+import JavaScriptImage from "../assets/images/skills/javascript.svg";
+import ReactImage from "../assets/images/skills/react.svg";
+import SassImage from "../assets/images/skills/sass.svg";
+import BootstrapImage from "../assets/images/skills/bootstrap.svg";
+import MaterialUIImage from "../assets/images/skills/material-ui.svg";
+import RadixUI from "../assets/images/skills/radix-ui.svg";
+import WordPressImage from "../assets/images/skills/wordpress.svg";
+import ShopifyImage from "../assets/images/skills/shopify.svg";
+import TypeScriptImage from "../assets/images/skills/typescript.svg";
+import NodeJSImage from "../assets/images/skills/nodejs.svg";
+import NextJSImage from "../assets/images/skills/next-js.svg";
+import AstroImage from "../assets/images/skills/astro.svg";
+import TailwindImage from "../assets/images/skills/tailwind.svg";
+import FigmaImage from "../assets/images/skills/figma.svg";
+import PhotoshopImage from "../assets/images/skills/photoshop.svg";
+import IllustratorImage from "../assets/images/skills/illustrator.svg";
+import ScrumImage from "../assets/images/skills/scrum.svg";
+import GitImage from "../assets/images/skills/git.svg";
+import GitHubImage from "../assets/images/skills/github.svg";
+import VisualStudioCodeImage from "../assets/images/skills/visual-studio-code.svg";
+import CursorImage from "../assets/images/skills/cursor.svg";
+
+
+
 
 
 
@@ -56,6 +61,10 @@ export const tabs = [
                 title: 'Material UI',
             },
             {
+                image: RadixUI,
+                title: 'Radix UI',
+            },
+            {
                 image: WordPressImage,
                 title: 'WordPress',
             },
@@ -74,8 +83,8 @@ export const tabs = [
                 title: 'TypeScript',
             },
             {
-                image: NodeJSImage,
-                title: 'Node.js',
+                image: NextJSImage,
+                title: 'Next.js',
             },
             {
                 image: AstroImage,
@@ -84,6 +93,10 @@ export const tabs = [
             {
                 image: TailwindImage,
                 title: 'Tailwind',
+            },
+            {
+                image: NodeJSImage,
+                title: 'Node.js',
             },
         ]
     },

@@ -40,32 +40,11 @@
     padding: $spacing-sm;
     cursor: pointer;
 
-    &:hover {
-      .header__logo-text {
-        max-height: 100px; 
-        opacity: 1;
-      }
-    }
-
     &-image {
       height: 100%;
       width: auto;
       object-fit: contain;
       display: block;
-    }
-
-    &-text {
-      max-height: 0;
-      opacity: 0;
-      @include transition;
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: $color-text;
-
-      span {
-        display: inline-block;
-        transform: scaleY(-1); 
-      }
     }
   }
 
@@ -76,11 +55,12 @@
 
     @include respond-to(sm) {
       display: none;
-      position: fixed;
+      position: absolute;
       top: 100px;
       left: 0;
-      right: 0;
-      background: $color-background;
+      right: 0;      
+      
+      @include glassmorphism;
       border-radius: $border-radius-md;
 
       padding: $spacing-md;
@@ -88,16 +68,6 @@
       align-items: stretch;
       gap: $spacing-md;
       animation: slideDown 0.3s ease-out forwards;
-
-      .header__nav {
-        @include flex(row, center, center);
-        
-        a {
-          font-size: 1.1rem;
-          gap: $spacing-sm;
-          padding: $spacing-sm;
-        }
-      }
 
       .header__cta {
         flex-direction: column;
@@ -114,6 +84,32 @@
   &__nav {
     @include flex(row, center, center);
     gap: $spacing-sm;
+
+    @include respond-to(sm) {
+      @include flex(column, center, flex-start);
+    }
+    
+    &-item {
+      @include flex(row, center, center);
+      gap: $spacing-xs;
+
+      &-text {
+        display: none;
+
+        @include respond-to(sm) {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    display: none;
+
+    @include respond-to(sm) {
+      display: block;
+    }
   }
 
   &__cta {
@@ -147,8 +143,11 @@
     }
 
     &__content.menu-open {
+      background-color: $color-background;
+
       .header__menu {
         display: flex;
+        background-color: $color-background;
       }
     }
   }

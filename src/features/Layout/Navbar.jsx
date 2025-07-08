@@ -1,6 +1,7 @@
 import "./Navbar.scss";
 import CustomButton from "../../shared/components/custom-button/CustomButton";
-import { House, ChartLine, Library, Wrench, Rocket, MessageSquareQuote } from "lucide-react";
+import CustomTooltip from "../../shared/components/custom-tooltip/CustomTooltip";
+import { House, ChartLine, Library, Wrench, MessageSquareQuote, Contact } from "lucide-react";
 import { useEffect, useState } from "react";
 
 // Componente que maneja los enlaces de navegación
@@ -8,14 +9,14 @@ const NavLinks = () => {
   // Estado para guardar qué sección está activa
   const [seccionActiva, setSeccionActiva] = useState("hero");
 
-  // Lista de enlaces con sus iconos y rutas
+  // Lista de enlaces con sus iconos, rutas y nombres
   const enlaces = [
-    { icono: <House />, id: "hero" },
-    { icono: <ChartLine />, id: "timeline" },
-    { icono: <Library />, id: "projects" },
-    { icono: <Wrench />, id: "skills" },
-    { icono: <MessageSquareQuote />, id: "reviews" },
-    { icono: <Rocket />, id: "contact" },
+    { icono: <House />, id: "hero", nombre: "Inicio" },
+    { icono: <ChartLine />, id: "timeline", nombre: "Experiencia" },
+    { icono: <Library />, id: "projects", nombre: "Proyectos" },
+    { icono: <Wrench />, id: "skills", nombre: "Habilidades" },
+    { icono: <MessageSquareQuote />, id: "reviews", nombre: "Testimonios" },
+    { icono: <Contact />, id: "contact", nombre: "Contacto" },
   ];
 
   // Función que se ejecuta cuando el usuario hace scroll
@@ -79,14 +80,16 @@ const NavLinks = () => {
             }`} 
           />
           
-          {/* Botón con el icono */}
-          <CustomButton
-            variant="text"
-            onClick={() => handleClick(enlace.id)}
-            className={`navbar__link ${seccionActiva === enlace.id ? 'navbar__link--active' : ''}`}
-          >
-            {enlace.icono}
-          </CustomButton>
+          {/* Botón con tooltip */}
+          <CustomTooltip text={enlace.nombre} position="top">
+            <CustomButton
+              variant="text"
+              onClick={() => handleClick(enlace.id)}
+              className={`navbar__link ${seccionActiva === enlace.id ? 'navbar__link--active' : ''}`}
+            >
+              {enlace.icono}
+            </CustomButton>
+          </CustomTooltip>
         </div>
       ))}
     </>

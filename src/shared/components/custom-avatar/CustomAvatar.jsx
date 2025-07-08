@@ -16,17 +16,49 @@ const CustomAvatar = ({ name, size = 'medium', className = '' }) => {
     }
   }, [name]);
 
-  // Generar color de fondo aleatorio
+  // Función para generar un hash simple del nombre
+  const getStringHash = (str) => {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+      const char = str.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash = hash & hash; // Convertir a 32-bit integer
+    }
+    return Math.abs(hash);
+  };
+
+  // Generar color de fondo consistente basado en el nombre
   const backgroundColor = useMemo(() => {
+    if (!name) return '#6B7280'; // Color por defecto
+    
+    // Paleta de colores mejorada con mejor contraste para texto blanco
     const colors = [
-      '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7',
-      '#DDA0DD', '#98D8C8', '#F7DC6F', '#BB8FCE', '#85C1E9',
-      '#F8C471', '#82E0AA', '#F1948A', '#85C1E9', '#D7BDE2',
-      '#F9E79F', '#ABEBC6', '#FAD7A0', '#AED6F1', '#F5B7B1'
+      '#1F2937', // Gris oscuro
+      '#DC2626', // Rojo
+      '#D97706', // Naranja
+      '#059669', // Verde
+      '#0284C7', // Azul
+      '#7C3AED', // Violeta
+      '#DB2777', // Rosa
+      '#0891B2', // Cian
+      '#7C2D12', // Marrón
+      '#374151', // Gris medio
+      '#BE123C', // Rojo oscuro
+      '#A16207', // Amarillo oscuro
+      '#047857', // Verde oscuro
+      '#1E40AF', // Azul oscuro
+      '#6B21A8', // Púrpura
+      '#A21CAF', // Magenta
+      '#0F766E', // Teal
+      '#92400E', // Naranja oscuro
+      '#450A0A', // Rojo muy oscuro
+      '#365314', // Verde oliva
     ];
-    const randomIndex = Math.floor(Math.random() * colors.length);
-    return colors[randomIndex];
-  }, []);
+    
+    const hash = getStringHash(name);
+    const colorIndex = hash % colors.length;
+    return colors[colorIndex];
+  }, [name]);
 
   return (
     <div 

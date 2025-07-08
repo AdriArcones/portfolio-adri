@@ -1,0 +1,87 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+.custom-truncated-text {
+  margin-bottom: $spacing-md;
+  
+  @include respond-to(md) {
+    margin-bottom: $spacing-sm;
+  }
+
+  &__content {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: $spacing-xs;
+    font-family: $body-font;
+    @include transition;
+    
+    @include respond-to(md) {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  }
+
+  &__toggle {
+    &.custom-button {
+      font-size: 0.9rem;
+      padding: 0;
+
+      &.text {
+        @include transition;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  // Variantes de color
+  &.primary {
+    .custom-truncated-text__content {
+      color: $color-text-secondary;
+    }
+
+    .custom-truncated-text__toggle.custom-button.text {
+      color: $color-primary;
+      
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+  }
+
+  &.secondary {
+    .custom-truncated-text__content {
+      color: $color-text;
+    }
+
+    .custom-truncated-text__toggle.custom-button.text {
+      color: $color-secondary;
+      
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &.muted {
+    .custom-truncated-text__content {
+      color: $color-gray;
+      font-size: 0.9rem;
+      
+      @include respond-to(md) {
+        font-size: 0.85rem;
+      }
+    }
+
+    .custom-truncated-text__toggle.custom-button.text {
+      color: $color-text-secondary;
+      font-size: 0.85rem;
+      
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+} 

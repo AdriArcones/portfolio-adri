@@ -43,36 +43,50 @@ export const Header = () => {
     <header
       className={`header ${isVisible ? "header--visible" : "header--hidden"}`}
     >
-      <div className={`header__content ${isTop ? "header--top" : ""} ${isMenuOpen ? "menu-open" : ""}`}>
+      <div
+        className={`header__content ${isTop ? "header--top" : ""} ${
+          isMenuOpen ? "menu-open" : ""
+        }`}
+      >
         <div className="header__logo">
           <img src={logo} alt="Logo" className="header__logo-image" />
-          <p className="header__logo-text">
-            <span>A</span>dri <span>A</span>rcones
-          </p>
         </div>
 
         <div className="header__menu">
+          <h2 className="header__title">
+            <span className="header__title-text">
+              <span className="header__title-text-highlight">
+                Redes Sociales
+              </span>
+            </span>
+          </h2>
           <nav className="header__nav">
             <CustomLink
               variant="secondary"
               to="https://www.linkedin.com/in/adrianarcones/"
               external
+              className="header__nav-item"
             >
               <Linkedin />
+              <span className="header__nav-item-text">Linkedin </span>
             </CustomLink>
             <CustomLink
               variant="secondary"
               to="https://github.com/AdriArcones"
               external
+              className="header__nav-item"
             >
               <Github />
+              <span className="header__nav-item-text">Github </span>
             </CustomLink>
             <CustomLink
               variant="secondary"
               to="https://www.instagram.com/adri_arcones/"
               external
+              className="header__nav-item"
             >
               <Instagram />
+              <span className="header__nav-item-text">Instagram </span>
             </CustomLink>
           </nav>
 
@@ -89,6 +103,9 @@ export const Header = () => {
               size="small"
               variant="primary"
               rightIcon={<ArrowRight />}
+              onClick={() => {
+                window.location.href = "#contact";
+              }}
             >
               Contactame
             </CustomButton>

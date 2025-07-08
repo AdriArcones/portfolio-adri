@@ -39,11 +39,11 @@ const TabHeader = ({ tabs, activeTab, onTabChange, autoChange, isMobile }) => {
 // Componente auxiliar para el contenido de tabs
 const TabContent = ({ tabs, activeTab, isMobile }) => {
   return (
-    <TabCard className="custom-tabs__content">
+    <TabCard className="custom-tabs__tab">
       <AnimatePresence mode="wait">
         <_motion.div
           key={activeTab}
-          className="custom-tabs__content-item"
+          className="custom-tabs__tab-item"
           initial={{ x: isMobile ? 0 : 300, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: isMobile ? 0 : -300, opacity: 0 }}
@@ -52,16 +52,16 @@ const TabContent = ({ tabs, activeTab, isMobile }) => {
             ease: "easeInOut",
           }}
         >
-          <div className="custom-tabs__content-item-container">
+          <div className="custom-tabs__tab-content">
             {tabs[activeTab].content.map((item, index) => (
-              <div key={index} className="custom-tabs__content-item-container-item">
+              <div key={index} className="custom-tabs__tab-content-item">
                 <img
-                  className="custom-tabs__content-item-image"
+                  className="custom-tabs__tab-content-item-image"
                   src={item.image}
                   alt={`Skill ${index}`}
                   title={item.title}
                 />
-                <p className="custom-tabs__content-item-title">{item.title}</p>
+                <p className="custom-tabs__tab-content-item-title">{item.title}</p>
               </div>
             ))}
           </div>

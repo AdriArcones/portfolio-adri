@@ -27,6 +27,12 @@
 
     &__link {
         font-size: 1.25rem;
+        @include transition;
+        transform: scale(1);
+
+        &:hover {
+            transform: scale(1.2);
+        }
 
         &--active {
             svg {
