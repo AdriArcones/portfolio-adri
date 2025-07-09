@@ -59,9 +59,8 @@
       top: 100px;
       left: 0;
       right: 0;      
-      
-      @include glassmorphism;
       border-radius: $border-radius-md;
+      @include glassmorphism;
 
       padding: $spacing-md;
       flex-direction: column;
@@ -143,12 +142,34 @@
     }
 
     &__content.menu-open {
-      background-color: $color-background;
+      // backdrop-filter: none;
+      // background-color: $color-background;
 
       .header__menu {
         display: flex;
-        background-color: $color-background;
+        // background-color: rgba(0, 0, 0, 0.1);
       }
     }
+  }
+}
+
+.header__overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  @include transition;
+  cursor: pointer;
+  
+  // Solo mostrar en móvil
+  @include respond-to(sm) {
+    opacity: 1;
+    visibility: visible;
   }
 }

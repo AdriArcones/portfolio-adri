@@ -22,8 +22,10 @@ import GitHubImage from "../assets/images/skills/github.svg";
 import VisualStudioCodeImage from "../assets/images/skills/visual-studio-code.svg";
 import CursorImage from "../assets/images/skills/cursor.svg";
 
-
-
+import AWSImage from "../assets/images/skills/aws.svg";
+import ScrumStudyImage from "../assets/images/skills/scrumstudy.svg";
+import CiscoImage from "../assets/images/skills/cisco.svg";
+import UniversidadEuropeaImage from "../assets/images/skills/universidad-europea.svg";
 
 
 
@@ -135,6 +137,28 @@ export const tabs = [
             {   
                 image: ScrumImage,
                 title: 'Scrum',
+            },
+        ]
+    },
+    {
+        id: 3,
+        title: 'Certificaciones',
+        content: [
+            {
+                image: UniversidadEuropeaImage,
+                title: 'Desarrollor de Aplicaciones Web',
+            },
+            {
+                image: AWSImage,
+                title: 'AWS Cloud 101',
+            },
+            {
+                image: CiscoImage,
+                title: 'Linux Essentials',
+            },
+            {
+                image: ScrumStudyImage,
+                title: 'Scrum Fundamentals',
             },
         ]
     }

@@ -39,6 +39,10 @@ export const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header
       className={`header ${isVisible ? "header--visible" : "header--hidden"}`}
@@ -118,6 +122,14 @@ export const Header = () => {
           </CustomButton>
         </div>
       </div>
+
+      {/* Overlay que solo aparece cuando el menú está abierto */}
+      {isMenuOpen && (
+        <div 
+          className="header__overlay"
+          onClick={closeMenu}
+        ></div>
+      )}
     </header>
   );
 };

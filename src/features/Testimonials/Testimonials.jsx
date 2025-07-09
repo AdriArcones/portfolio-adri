@@ -2,68 +2,77 @@ import './Testimonials.scss'
 import CustomSection from '../../shared/components/custom-section/CustomSection'
 import TestimonialsCard from './TestimonialsCard'
 import { testimonialsData } from '../../data/testimonialsData'
-import { useState, useEffect, useRef } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper/modules'
+import { useRef } from 'react'
+
+// Importar estilos de Swiper
+import 'swiper/css'
 
 export const Testimonials = () => {
-  const [isHovered, setIsHovered] = useState(false)
-  const carouselRef = useRef(null)
-  const [translateX, setTranslateX] = useState(0)
+  const swiperRef = useRef(null)
 
-  // Duplicar testimonios para crear efecto infinito
-  const duplicatedTestimonials = [...testimonialsData, ...testimonialsData]
+  const handleMouseEnter = () => {
+    if (swiperRef.current && swiperRef.current.autoplay) {
+      swiperRef.current.autoplay.stop()
+    }
+  }
 
-  useEffect(() => {
-    if (isHovered) return
-
-    const interval = setInterval(() => {
-      setTranslateX(prev => {
-        // Calcular ancho basado en el tamaño de pantalla
-        const isMobile = window.innerWidth <= 768
-        const cardWidth = isMobile ? 280 : 300
-        const gap = isMobile ? 32 : 24 // $spacing-lg : $spacing-md (2rem : 1.5rem)
-        const totalCardWidth = cardWidth + gap
-        const totalWidth = totalCardWidth * testimonialsData.length
-        
-        // Si llegamos al final del primer conjunto, reiniciar suavemente
-        if (prev <= -totalWidth) {
-          return 0
-        }
-        
-        // Mover hacia la izquierda (velocidad configurable)
-        return prev - 0.5
-      })
-    }, 6) // ~60fps para movimiento suave
-
-    return () => clearInterval(interval)
-  }, [isHovered, testimonialsData.length])
-
+  const handleMouseLeave = () => {
+    if (swiperRef.current && swiperRef.current.autoplay) {
+      swiperRef.current.autoplay.start()
+    }
+  }
   return (
     <CustomSection
-      title="Reviews"
-      subtitle="Mi experiencia anterior con otros retos" 
+      title="Comentarios"
+      subtitle="Detrás de cada línea de código, hay personas, ideas y café compartido." 
       id="reviews"
       className="testimonials"
     >
       <div 
         className="testimonials-carousel-wrapper"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
-        <div 
-          ref={carouselRef}
+        <Swiper
+          ref={swiperRef}
+          modules={[Autoplay]}
+          spaceBetween={24}
+          slidesPerView="auto"
+          loop={true}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+            reverseDirection: false,
+          }}
+          speed={3000}
+          allowTouchMove={false}
+          freeMode={true}
+          freeModeMomentum={false}
           className="testimonials-carousel"
-          style={{
-            transform: `translateX(${translateX}px)`,
-            transition: 'none'
+          breakpoints={{
+            320: {
+              spaceBetween: 32,
+            },
+            768: {
+              spaceBetween: 24,
+            },
           }}
         >
-          {duplicatedTestimonials.map((testimonial, index) => (
-            <TestimonialsCard 
-              key={`testimonial-${testimonial.id}-${index}`} 
-              {...testimonial} 
-            />
+          {/* Renderizar los testimonios varias veces para mayor fluidez */}
+          {[...Array(3)].map((_, groupIndex) => (
+            testimonialsData.map((testimonial, index) => (
+              <SwiperSlide 
+                key={`testimonial-${testimonial.id}-${groupIndex}-${index}`}
+                className="testimonials-slide"
+              >
+                <TestimonialsCard {...testimonial} />
+              </SwiperSlide>
+            ))
           ))}
-        </div>
+        </Swiper>
       </div>
     </CustomSection>
   )

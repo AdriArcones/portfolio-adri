@@ -13,13 +13,38 @@
 }
 
 .testimonials-carousel {
-  @include flex(row, flex-start, center, nowrap);
-  gap: $spacing-md;
-  will-change: transform;
+  width: 100%;
+  height: auto;
   
-  // Responsive: ajustar gap
+  // Personalizar los estilos de Swiper
+  .swiper-wrapper {
+    transition-timing-function: linear;
+    align-items: center;
+  }
+  
+  .swiper-slide {
+    width: auto;
+    height: auto;
+  }
+  
+  // Deshabilitar indicadores y navegación
+  .swiper-pagination {
+    display: none;
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}
+
+.testimonials-slide {
+  width: 350px; // Ancho fijo para desktop
+  height: auto;
+  flex-shrink: 0;
+  
   @media (max-width: 768px) {
-    gap: $spacing-lg;
+    width: 280px; 
   }
 }
 
@@ -27,12 +52,11 @@
 .testimonials-card {
   @include flex(column, space-between, flex-start, nowrap);
   gap: $spacing-sm;
-  width: 350px; // Ancho fijo para desktop
+  max-width: 350px;
+  width: 100%;
   height: 200px; // Altura fija para uniformidad
-  flex-shrink: 0;
   
   @media (max-width: 768px) {
-    width: 280px; 
     height: 180px; 
   }
 

@@ -3,21 +3,25 @@ import CustomButton from "../../shared/components/custom-button/CustomButton";
 import CustomTooltip from "../../shared/components/custom-tooltip/CustomTooltip";
 import { House, ChartLine, Library, Wrench, MessageSquareQuote, Contact } from "lucide-react";
 import { useEffect, useState } from "react";
+import { navbarData } from "../../data/navbarData";
 
 // Componente que maneja los enlaces de navegación
 const NavLinks = () => {
   // Estado para guardar qué sección está activa
   const [seccionActiva, setSeccionActiva] = useState("hero");
 
-  // Lista de enlaces con sus iconos, rutas y nombres
-  const enlaces = [
-    { icono: <House />, id: "hero", nombre: "Inicio" },
-    { icono: <ChartLine />, id: "timeline", nombre: "Experiencia" },
-    { icono: <Library />, id: "projects", nombre: "Proyectos" },
-    { icono: <Wrench />, id: "skills", nombre: "Habilidades" },
-    { icono: <MessageSquareQuote />, id: "reviews", nombre: "Testimonios" },
-    { icono: <Contact />, id: "contact", nombre: "Contacto" },
-  ];
+  // Mapeo de nombres de iconos a componentes
+  const iconMap = {
+    House: <House />,
+    ChartLine: <ChartLine />,
+    Library: <Library />,
+    Wrench: <Wrench />,
+    MessageSquareQuote: <MessageSquareQuote />,
+    Contact: <Contact />
+  };
+
+  // Lista de enlaces extraída de los datos mockeados
+  const enlaces = navbarData.enlaces;
 
   // Función que se ejecuta cuando el usuario hace scroll
   const detectarSeccionActiva = () => {
@@ -87,7 +91,7 @@ const NavLinks = () => {
               onClick={() => handleClick(enlace.id)}
               className={`navbar__link ${seccionActiva === enlace.id ? 'navbar__link--active' : ''}`}
             >
-              {enlace.icono}
+              {iconMap[enlace.icono]}
             </CustomButton>
           </CustomTooltip>
         </div>

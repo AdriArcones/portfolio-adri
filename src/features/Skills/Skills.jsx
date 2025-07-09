@@ -66,8 +66,8 @@ export const Skills = () => {
   return (
     <div ref={sectionRef} className="skills-sticky-container">
       <CustomSection
-        title="Skills"
-        subtitle="Mis habilidades y futuros objetivos"
+        title="Habilidades"
+        subtitle="Mis herramientas actuales y las que exploraré para darle vida a nuevos desafíos"
         id="skills"
         className="skills-section"
       >

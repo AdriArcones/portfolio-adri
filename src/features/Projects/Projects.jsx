@@ -24,7 +24,7 @@ export const Projects = () => {
   return (
     <CustomSection
       title="Proyectos"
-      subtitle="Mis desafíos y proyectos"
+      subtitle="Ideas que dejaron de ser código para convertirse en historias"
       id="projects"
     >
       <div className="projects__container">

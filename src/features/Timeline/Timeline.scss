@@ -191,46 +191,141 @@
     }
   }
 
-  /*=============== ACCORDION ===============*/
+  /*=============== RADIX ACCORDION ===============*/
 
-  &__accordion-header {
-    @include flex(row, space-between, center);
-    margin: 0;
-    @include transition;
+  &__accordion {
+    padding: 0;
+    
+    &-root {
+      width: 100%;
+    }
 
-    &:hover {
-      background-color: rgba($color-primary, 0.08);
+    &-item {
+      width: 100%;
+    }
+
+    &-header {
+      width: 100%;
+      margin: 0;
+    }
+
+    &-trigger {
+      @include flex(row, space-between, center);
+      width: 100%;
+      padding: $spacing-sm;
+      background: none;
+      border: none;
+      cursor: pointer;
+      @include transition;
+
+      &:hover {
+        background-color: rgba($color-primary, 0.08);
+      }
+
+      &[data-state="open"] {
+        .timeline__accordion-icon--plus {
+          opacity: 0;
+          transform: rotate(90deg);
+        }
+
+        .timeline__accordion-icon--minus {
+          opacity: 1;
+          transform: rotate(0deg);
+        }
+      }
+
+      &[data-state="closed"] {
+        .timeline__accordion-icon--plus {
+          opacity: 1;
+          transform: rotate(0deg);
+        }
+
+        .timeline__accordion-icon--minus {
+          opacity: 0;
+          transform: rotate(-90deg);
+        }
+      }
+    }
+
+    &-info {
+      @include flex(row, flex-start, center);
+      gap: $spacing-sm;
+    }
+
+    &-year {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: $color-text;
+      font-family: $title-font;
+      margin: 0;
+    }
+
+    &-toggle {
+      position: relative;
+      
+      &.custom-button {
+        min-width: 2.5rem;
+        height: 2.5rem;
+        padding: 0;
+        pointer-events: none;
+      }
+    }
+
+    &-icon {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include transition(all, 0.2s, ease-in-out);
+
+      &--plus {
+        opacity: 1;
+      }
+
+      &--minus {
+        opacity: 0;
+      }
+    }
+
+    &-content {
+      margin-top: $spacing-md;
+      overflow: hidden;
+      @include transition(all, 0.3s, ease-in-out);
+
+      &[data-state="open"] {
+        animation: slideDown 0.3s ease-in-out;
+      }
+
+      &[data-state="closed"] {
+        animation: slideUp 0.3s ease-in-out;
+      }
+    }
+
+    &-inner {
+      padding: 0 $spacing-md $spacing-md;
     }
   }
 
-  &__accordion-info {
-    @include flex(row, flex-start, center);
-    gap: $spacing-sm;
-  }
-
-  &__accordion-year {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: $color-text;
-    font-family: $title-font;
-    margin: 0;
-  }
-
-  &__accordion-toggle {
-    &.custom-button {
-      min-width: 2.5rem;
-      height: 2.5rem;
-      padding: 0;
+  // Animaciones para el accordion
+  @keyframes slideDown {
+    from {
+      height: 0;
+      opacity: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+      opacity: 1;
     }
   }
 
-  &__accordion-content {
-    padding-top: $spacing-md;
-    overflow: hidden;
-  }
-
-  &__accordion-inner {
-    padding: 0 $spacing-md $spacing-md;
+  @keyframes slideUp {
+    from {
+      height: var(--radix-accordion-content-height);
+      opacity: 1;
+    }
+    to {
+      height: 0;
+      opacity: 0;
+    }
   }
 }
 

@@ -7,7 +7,7 @@ export const Timeline = () => {
   return (
     <CustomSection
       title="Mi Experiencia"
-      subtitle="Un viaje de aprendizaje y crecimiento en el desarrollo web"
+      subtitle="El camino se hace al andar (y a veces, corriendo)"
       id="timeline"
       className="timeline__section"
     >
