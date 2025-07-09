@@ -1,5 +1,6 @@
 import "./Hero.scss";
 import CustomSection from "../../shared/components/custom-section/CustomSection";
+import LazyImage from "../../shared/components/lazy-image/LazyImage";
 import heroImage from "../../assets/images/hero/hero-image2.png";
 import { CheckCheck } from "lucide-react";
 import CustomButton from "../../shared/components/custom-button/CustomButton";
@@ -48,7 +49,12 @@ export const Hero = () => {
         </div>
 
         <div className="hero__image">
-          <img src={heroImage} alt="Hero" />
+          <LazyImage 
+            src={heroImage} 
+            alt="Hero" 
+            priority={true}
+            style={{ width: '100%', height: '750px' }}
+          />
           <CustomCard glass className="hero__card">
             <div className="hero__card-quote-container">
               <img src={quote} alt="Quote" className="hero__card-quote" />

@@ -1,6 +1,7 @@
 import CustomCard from "../../shared/components/custom-card/CustomCard";
 import CustomChip from "../../shared/components/custom-chip/CustomChip";
 import CustomButton from "../../shared/components/custom-button/CustomButton";
+import LazyImage from "../../shared/components/lazy-image/LazyImage";
 import { Github } from "lucide-react";
 
 export const ProjectCard = ({
@@ -14,7 +15,11 @@ export const ProjectCard = ({
   return (
     <CustomCard glass glow className="project-card__content">
       <div className="project-card__image-container">
-        <img src={image} alt={title} className="project-card__image" />
+        <LazyImage 
+          src={image} 
+          alt={title} 
+          className="project-card__image inline"
+        />
       </div>
 
       <div className="project-card__content-container">

@@ -43,6 +43,15 @@ export const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const downloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/cv-adrian-arcones.pdf';
+    link.download = 'CV-Adrian-Arcones.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <header
       className={`header ${isVisible ? "header--visible" : "header--hidden"}`}
@@ -99,6 +108,7 @@ export const Header = () => {
               size="small"
               variant="outline"
               rightIcon={<ArrowDownToLine />}
+              onClick={downloadCV}
             >
               Curriculum
             </CustomButton>

@@ -149,6 +149,38 @@
       transform: scale(1.1);
       cursor: pointer;
     }
+
+    // Estilos para LazyImage
+    &.inline {
+      .lazy-image__img {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+        @include transition;
+        position: static;
+        opacity: 1;
+
+        @include respond-to(lg) {
+          width: 80px;
+          height: 80px;
+        }
+
+        @include respond-to(md) {
+          width: 70px;
+          height: 70px;
+        }
+
+        @include respond-to(sm) {
+          width: 60px;
+          height: 60px;
+        }
+      }
+
+      &:hover .lazy-image__img {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+    }
   }
 
   &__tab-content-item-title {

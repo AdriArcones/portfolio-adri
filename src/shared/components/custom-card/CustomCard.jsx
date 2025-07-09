@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./CustomCard.scss";
 
 const CustomCard = ({
@@ -30,14 +29,6 @@ const CustomCard = ({
   );
 };
 
-CustomCard.propTypes = {
-  children: PropTypes.node.isRequired,
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-  glass: PropTypes.bool,
-  glow: PropTypes.bool,
-};
+
 
 export default CustomCard;

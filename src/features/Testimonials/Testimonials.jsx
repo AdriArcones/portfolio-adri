@@ -61,8 +61,8 @@ export const Testimonials = () => {
             },
           }}
         >
-          {/* Renderizar los testimonios varias veces para mayor fluidez */}
-          {[...Array(3)].map((_, groupIndex) => (
+          {/* Renderizar los testimonios 2 veces para fluidez optimizada */}
+          {[...Array(2)].map((_, groupIndex) => (
             testimonialsData.map((testimonial, index) => (
               <SwiperSlide 
                 key={`testimonial-${testimonial.id}-${groupIndex}-${index}`}

@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { motion as _motion, AnimatePresence } from "framer-motion";
+// eslint-disable-next-line no-unused-vars
+import { motion, AnimatePresence } from "framer-motion";
+import LazyImage from "../lazy-image/LazyImage";
 import "./CustomTabs.scss";
 
 // Componente auxiliar para las tarjetas de tabs
@@ -19,7 +21,7 @@ const TabHeader = ({ tabs, activeTab, onTabChange, autoChange, isMobile }) => {
   return (
     <TabCard className="custom-tabs__header">
       {tabs.map((tab, index) => (
-        <_motion.div
+        <motion.div
           key={tab.id}
           className={`custom-tabs__header-item ${
             activeTab === index ? "active" : ""
@@ -30,7 +32,7 @@ const TabHeader = ({ tabs, activeTab, onTabChange, autoChange, isMobile }) => {
           transition={{ duration: 0.2 }}
         >
           {tab.title}
-        </_motion.div>
+        </motion.div>
       ))}
     </TabCard>
   );
@@ -41,7 +43,7 @@ const TabContent = ({ tabs, activeTab, isMobile }) => {
   return (
     <TabCard className="custom-tabs__tab">
       <AnimatePresence mode="wait">
-        <_motion.div
+        <motion.div
           key={activeTab}
           className="custom-tabs__tab-item"
           initial={{ x: isMobile ? 0 : 300, opacity: 0 }}
@@ -55,8 +57,8 @@ const TabContent = ({ tabs, activeTab, isMobile }) => {
           <div className="custom-tabs__tab-content">
             {tabs[activeTab].content.map((item, index) => (
               <div key={index} className="custom-tabs__tab-content-item">
-                <img
-                  className="custom-tabs__tab-content-item-image"
+                <LazyImage
+                  className="custom-tabs__tab-content-item-image inline"
                   src={item.image}
                   alt={`Skill ${index}`}
                   title={item.title}
@@ -65,7 +67,7 @@ const TabContent = ({ tabs, activeTab, isMobile }) => {
               </div>
             ))}
           </div>
-        </_motion.div>
+        </motion.div>
       </AnimatePresence>
     </TabCard>
   );

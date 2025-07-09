@@ -13,13 +13,13 @@ function App() {
        <BackgroundBlobs
           blobs={[
             {
-              color: "pink",
+              color: "green",
               size: "small",
               position: "top-left",
             },
             {
               color: "blue",
-              size: "large",
+              size: "medium",
               position: "center",
               center: true,
             },

@@ -23,6 +23,43 @@ export default defineConfig({
       }
     }
   ],
+  build: {
+    // Optimizaciones de build
+    target: 'esnext',
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    },
+    rollupOptions: {
+      output: {
+        // Code splitting manual para optimizar chunks
+        manualChunks: {
+          // Dependencias principales
+          vendor: ['react', 'react-dom'],
+          // Librerías de UI
+          ui: ['framer-motion', 'lucide-react', '@radix-ui/react-accordion'],
+          // Utilidades
+          utils: ['lenis', 'swiper', '@emailjs/browser']
+        }
+      }
+    },
+    // Aumentar el límite de chunk size warning
+    chunkSizeWarningLimit: 1000
+  },
+  optimizeDeps: {
+    // Pre-bundle dependencias para desarrollo más rápido
+    include: [
+      'react',
+      'react-dom',
+      'framer-motion',
+      'lucide-react',
+      'lenis',
+      'swiper'
+    ]
+  },
   server: {
     host: '0.0.0.0',
     port: 5173,

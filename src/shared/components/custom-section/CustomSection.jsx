@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './CustomSection.scss';
 
 const CustomSection = ({
@@ -28,14 +27,6 @@ const CustomSection = ({
   );
 };
 
-CustomSection.propTypes = {
-  children: PropTypes.node.isRequired,
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  className: PropTypes.string,
-  background: PropTypes.oneOf(['', 'default', 'primary', 'secondary', 'glass']),
-  fullWidth: PropTypes.bool,
-  id: PropTypes.string,
-};
+
 
 export default CustomSection; 

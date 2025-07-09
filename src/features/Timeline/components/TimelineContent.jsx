@@ -1,6 +1,7 @@
 import React from 'react';
 import CustomTruncatedText from '../../../shared/components/custom-truncated-text/CustomTruncatedText';
 import CustomChip from '../../../shared/components/custom-chip/CustomChip';
+import LazyImage from '../../../shared/components/lazy-image/LazyImage';
 
 const TimelineContent = ({ contentItem, yearTitle }) => {
   return (
@@ -33,10 +34,11 @@ const TimelineContent = ({ contentItem, yearTitle }) => {
       {contentItem.images && contentItem.images.length > 0 && (
         <div className="timeline__image-container">
           {contentItem.images.map((image, index) => (
-            <img 
+            <LazyImage 
               key={index} 
               src={image} 
-              alt={`${yearTitle} - ${contentItem.title || 'imagen'} ${index + 1}`} 
+              alt={`${yearTitle} - ${contentItem.title || 'imagen'} ${index + 1}`}
+              className="timeline__image"
             />
           ))}
         </div>

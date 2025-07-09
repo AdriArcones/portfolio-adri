@@ -14,12 +14,16 @@ $color-error: #ff3936;
     font-family: 'Inter';
     src: url('../../assets/fonts/inter/inter-variable.ttf') format('truetype');
     font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
   }
   
   @font-face {
     font-family: 'DMSans';
     src: url('../../assets/fonts/dm_sans/DMSans-variable.ttf') format('truetype');
     font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
   }
   
   // Variables SCSS para usar fácilmente

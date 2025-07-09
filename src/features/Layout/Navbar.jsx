@@ -4,6 +4,7 @@ import CustomTooltip from "../../shared/components/custom-tooltip/CustomTooltip"
 import { House, ChartLine, Library, Wrench, MessageSquareQuote, Contact } from "lucide-react";
 import { useEffect, useState } from "react";
 import { navbarData } from "../../data/navbarData";
+import { rafThrottle } from "../../shared/utils/throttle";
 
 // Componente que maneja los enlaces de navegación
 const NavLinks = () => {
@@ -63,14 +64,17 @@ const NavLinks = () => {
 
   // Configuramos el detector de scroll cuando el componente se monta
   useEffect(() => {
+    // Throttle del detector de scroll para mejor rendimiento
+    const throttledDetector = rafThrottle(detectarSeccionActiva);
+    
     // Añadimos el detector de scroll
-    window.addEventListener("scroll", detectarSeccionActiva);
+    window.addEventListener("scroll", throttledDetector);
     
     // Comprobamos la sección inicial
     detectarSeccionActiva();
 
     // Limpiamos el detector cuando el componente se desmonta
-    return () => window.removeEventListener("scroll", detectarSeccionActiva);
+    return () => window.removeEventListener("scroll", throttledDetector);
   }, []);
 
   return (

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./CustomButton.scss";
 
 const CustomButton = ({
@@ -28,17 +27,6 @@ const CustomButton = ({
   );
 };
 
-CustomButton.propTypes = {
-  children: PropTypes.node.isRequired,
-  variant: PropTypes.oneOf(["primary", "secondary", "outline", "text"]),
-  size: PropTypes.oneOf(["small", "medium", "large"]),
-  onClick: PropTypes.func,
-  disabled: PropTypes.bool,
-  type: PropTypes.oneOf(["button", "submit", "reset"]),
-  className: PropTypes.string,
-  fullWidth: PropTypes.bool,
-  leftIcon: PropTypes.node,
-  rightIcon: PropTypes.node,
-};
+
 
 export default CustomButton;

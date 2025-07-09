@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import "./CustomChip.scss";
 
 const CustomChip = ({ 
@@ -15,12 +14,6 @@ const CustomChip = ({
   );
 };
 
-CustomChip.propTypes = {
-  label: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
-  className: PropTypes.string,
-  color: PropTypes.oneOf(["primary", "secondary", "outline"]),
-  size: PropTypes.oneOf(["sm", "md", "lg"]),
-};
+
 
 export default CustomChip;

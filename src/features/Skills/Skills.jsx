@@ -4,6 +4,7 @@ import './Skills.scss'
 import CustomSection from '../../shared/components/custom-section/CustomSection'
 import CustomTabs from '../../shared/components/custom-tabs/CustomTabs'
 import { tabs } from '../../data/skillsData'
+import { rafThrottle } from '../../shared/utils/throttle'
 
 export const Skills = () => {
   const sectionRef = useRef(null)
@@ -55,7 +56,10 @@ export const Skills = () => {
       setScrollProgress(newProgress)
     }
 
-    const unsubscribe = lenis.on('scroll', updateScrollProgress)
+    // Throttle del scroll listener para mejor rendimiento
+    const throttledUpdate = rafThrottle(updateScrollProgress)
+    
+    const unsubscribe = lenis.on('scroll', throttledUpdate)
     updateScrollProgress()
 
     return () => {

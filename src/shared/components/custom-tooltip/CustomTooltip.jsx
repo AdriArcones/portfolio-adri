@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./CustomTooltip.scss";
 
 const CustomTooltip = ({ 
@@ -19,12 +18,6 @@ const CustomTooltip = ({
   );
 };
 
-CustomTooltip.propTypes = {
-  children: PropTypes.node.isRequired,
-  text: PropTypes.string.isRequired,
-  position: PropTypes.oneOf(["top", "bottom", "left", "right"]),
-  className: PropTypes.string,
-  isVisible: PropTypes.bool,
-};
+
 
 export default CustomTooltip; 

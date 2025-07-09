@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import useMobile from '../../hooks/useMobile';
 import CustomButton from '../custom-button/CustomButton';
 import './CustomTruncatedText.scss';
@@ -50,15 +49,6 @@ const CustomTruncatedText = ({
   );
 };
 
-CustomTruncatedText.propTypes = {
-  text: PropTypes.string.isRequired,
-  maxLength: PropTypes.number,
-  expandText: PropTypes.string,
-  collapseText: PropTypes.string,
-  className: PropTypes.string,
-  variant: PropTypes.oneOf(['primary', 'secondary', 'muted']),
-  enableMobile: PropTypes.bool,
-  htmlContent: PropTypes.bool,
-};
+
 
 export default CustomTruncatedText; 
