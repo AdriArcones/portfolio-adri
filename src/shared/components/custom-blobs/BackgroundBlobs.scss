@@ -26,6 +26,11 @@
       height: 200px;
       filter: blur(100px);
       animation-duration: 15s;
+
+      @include respond-to(sm) {
+        width: 150px;
+        height: 150px;
+      }
     }
   
     &.medium {
@@ -33,6 +38,11 @@
       height: 400px;
       filter: blur(150px);
       animation-duration: 20s;
+
+      @include respond-to(sm) {
+        width: 250px;
+        height: 250px;
+      }
     }
   
     &.large {
@@ -40,6 +50,11 @@
       height: 600px;
       filter: blur(200px);
       animation-duration: 25s;
+
+      @include respond-to(sm) {
+        width: 350px;
+        height: 350px;
+      }
     }
   
     &.xlarge {
@@ -47,6 +62,11 @@
       height: 800px;
       filter: blur(250px);
       animation-duration: 30s;
+
+      @include respond-to(sm) {
+        width: 450px;
+        height: 450px;
+      }
     }
   
     &.pink {
