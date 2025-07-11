@@ -4,7 +4,7 @@ import logo from "../../assets/images/header/logo-blanco.svg";
 import CustomButton from "../../shared/components/custom-button/CustomButton";
 import { ArrowDownToLine, ArrowRight, Menu, X } from "lucide-react";
 import CustomLink from "../../shared/components/custom-link/CustomLink";
-import { Github, Instagram, Linkedin } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -69,7 +69,7 @@ export const Header = () => {
           <h2 className="header__title">
             <span className="header__title-text">
               <span className="header__title-text-highlight">
-                Redes Sociales
+                Links Sociales
               </span>
             </span>
           </h2>
@@ -94,12 +94,12 @@ export const Header = () => {
             </CustomLink>
             <CustomLink
               variant="secondary"
-              to="https://www.instagram.com/adri_arcones/"
+              to="mailto:adrianarconesgomez@gmail.com"
               external
               className="header__nav-item"
             >
-              <Instagram />
-              <span className="header__nav-item-text">Instagram </span>
+              <Mail />
+              <span className="header__nav-item-text">Correo </span>
             </CustomLink>
           </nav>
 

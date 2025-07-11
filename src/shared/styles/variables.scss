@@ -10,25 +10,8 @@ $color-glass: rgba(255, 255, 255, 0.1);
 $color-error: #ff3936;
 
 // Tipografía
-@font-face {
-    font-family: 'Inter';
-    src: url('../../assets/fonts/inter/inter-variable.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'DMSans';
-    src: url('../../assets/fonts/dm_sans/DMSans-variable.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-  }
-  
-  // Variables SCSS para usar fácilmente
-  $title-font: 'Inter', sans-serif;
-  $body-font: 'DMSans', serif;
+$title-font: 'Inter', sans-serif;
+$body-font: 'DM Sans', serif;
 
 
 // Breakpoints
