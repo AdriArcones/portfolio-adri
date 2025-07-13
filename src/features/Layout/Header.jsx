@@ -106,14 +106,14 @@ export const Header = () => {
           <div className="header__cta">
             <CustomButton
               size="small"
-              variant="outline"
+              variant="primary"
               rightIcon={<ArrowDownToLine />}
               onClick={downloadCV}
             >
               Curriculum
             </CustomButton>
 
-            <CustomButton
+            {/* <CustomButton
               size="small"
               variant="primary"
               rightIcon={<ArrowRight />}
@@ -122,7 +122,7 @@ export const Header = () => {
               }}
             >
               Contactame
-            </CustomButton>
+            </CustomButton> */}
           </div>
         </div>
 

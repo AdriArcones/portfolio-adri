@@ -53,6 +53,7 @@ export const Hero = () => {
             src={heroImage} 
             alt="Hero" 
             priority={true}
+            className="hero__image-img"
           />
           <CustomCard glass className="hero__card">
             <div className="hero__card-quote-container">
