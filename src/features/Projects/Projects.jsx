@@ -29,7 +29,16 @@ export const Projects = () => {
     >
       <div className="projects__container">
         {projectsToShow.map((project) => (
-          <ProjectCard key={project.title} {...project} />
+          <ProjectCard 
+            key={project.title} 
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            images={project.images}
+            link={project.link}
+            github={project.github}
+            tags={project.tags}
+          />
         ))}
       </div>
       

@@ -2,12 +2,14 @@ import CustomCard from "../../shared/components/custom-card/CustomCard";
 import CustomChip from "../../shared/components/custom-chip/CustomChip";
 import CustomButton from "../../shared/components/custom-button/CustomButton";
 import LazyImage from "../../shared/components/lazy-image/LazyImage";
+import PhotoGallery from "../../shared/components/photo-gallery/PhotoGallery";
 import { Github } from "lucide-react";
 
 export const ProjectCard = ({
   title,
   description,
   image,
+  images,
   link,
   github,
   tags,
@@ -15,11 +17,19 @@ export const ProjectCard = ({
   return (
     <CustomCard glass glow className="project-card__content">
       <div className="project-card__image-container">
-        <LazyImage 
-          src={image} 
-          alt={title} 
-          className="project-card__image inline"
-        />
+        {images && images.length > 1 ? (
+          <PhotoGallery 
+            images={images} 
+            title={title}
+            className="project-card__gallery"
+          />
+        ) : (
+          <LazyImage 
+            src={image} 
+            alt={title} 
+            className="project-card__image inline"
+          />
+        )}
       </div>
 
       <div className="project-card__content-container">

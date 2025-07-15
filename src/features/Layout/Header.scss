@@ -92,13 +92,6 @@
       @include flex(row, center, center);
       gap: $spacing-xs;
 
-      &-text {
-        display: none;
-
-        @include respond-to(sm) {
-          display: inline-block;
-        }
-      }
     }
   }
 

@@ -5,12 +5,15 @@ import CustomButton from "../../shared/components/custom-button/CustomButton";
 import { ArrowDownToLine, ArrowRight, Menu, X } from "lucide-react";
 import CustomLink from "../../shared/components/custom-link/CustomLink";
 import { Github, Linkedin, Mail } from "lucide-react";
+import useMobile from "../../shared/hooks/useMobile";
+import CustomTooltip from "../../shared/components/custom-tooltip/CustomTooltip";
 
 export const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isTop, setIsTop] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isMobile = useMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,7 +72,7 @@ export const Header = () => {
           <h2 className="header__title">
             <span className="header__title-text">
               <span className="header__title-text-highlight">
-                Links Sociales
+                Encuéntrame en
               </span>
             </span>
           </h2>
@@ -80,8 +83,16 @@ export const Header = () => {
               external
               className="header__nav-item"
             >
-              <Linkedin />
-              <span className="header__nav-item-text">Linkedin </span>
+              {isMobile ? (
+                <>
+                  <Linkedin />
+                  <span className="header__nav-item-text">Linkedin </span>
+                </>
+              ) : (
+                <CustomTooltip text="Linkedin" position="bottom">
+                  <Linkedin />
+                </CustomTooltip>
+              )}
             </CustomLink>
             <CustomLink
               variant="secondary"
@@ -89,8 +100,16 @@ export const Header = () => {
               external
               className="header__nav-item"
             >
-              <Github />
-              <span className="header__nav-item-text">Github </span>
+              {isMobile ? (
+                <>
+                  <Github />
+                  <span className="header__nav-item-text">Github </span>
+                </>
+              ) : (
+                <CustomTooltip text="Github" position="bottom">
+                  <Github />
+                </CustomTooltip>
+              )}
             </CustomLink>
             <CustomLink
               variant="secondary"
@@ -98,8 +117,16 @@ export const Header = () => {
               external
               className="header__nav-item"
             >
-              <Mail />
-              <span className="header__nav-item-text">Correo </span>
+              {isMobile ? (
+                <>
+                  <Mail />
+                  <span className="header__nav-item-text">Correo </span>
+                </>
+              ) : (
+                <CustomTooltip text="Correo" position="bottom">
+                  <Mail />
+                </CustomTooltip>
+              )}
             </CustomLink>
           </nav>
 

@@ -4,7 +4,7 @@ import { useState } from "react";
 import emailjs from '@emailjs/browser';
 import { EMAILJS_CONFIG } from "../../shared/config/emailjs.config";
 
-const CustomForm = () => {
+const CustomForm = ({ className }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -124,7 +124,7 @@ const CustomForm = () => {
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <form className={`form ${className}`} onSubmit={handleSubmit}>
       <div className="form__item">
         <label htmlFor="name">Nombre</label>
         <input 

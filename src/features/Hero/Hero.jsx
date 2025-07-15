@@ -2,7 +2,7 @@ import "./Hero.scss";
 import CustomSection from "../../shared/components/custom-section/CustomSection";
 import LazyImage from "../../shared/components/lazy-image/LazyImage";
 import heroImage from "../../assets/images/hero/hero-image2.png";
-import { CheckCheck } from "lucide-react";
+import { CheckCheck, MessageCircleMore } from "lucide-react";
 import CustomButton from "../../shared/components/custom-button/CustomButton";
 import CustomCard from "../../shared/components/custom-card/CustomCard";
 import quote from "../../assets/images/hero/quote.svg";
@@ -42,7 +42,7 @@ export const Hero = () => {
                 variant={button.variant}
                 className="hero__button"
               >
-                {button.text}
+                {button.text} <MessageCircleMore />
               </CustomButton>
             ))}
           </div>

@@ -7,10 +7,6 @@
     width: 100%;
     max-width: 500px;
 
-    @include respond-to(sm){
-        margin-bottom: 5rem;
-    }
-
     &__item{
         @include flex(column, space-between, flex-start, nowrap);
         gap: $spacing-xs;
@@ -45,6 +41,65 @@
 
         &--success{
             color: $color-secondary;
+        }
+    }
+}
+
+.contact{
+    width: 100%;
+    @include flex(row, center, center, nowrap);
+    gap: $spacing-xl;
+
+    // === DESKTOP (por defecto) ===
+    &__form{
+        flex: 0 0 60%; // Formulario ocupa 60% del ancho
+        max-width: 600px;
+    }
+
+    &__image{
+        flex: 0 0 40%; // Imagen ocupa 40% del ancho
+        height: 400px;
+        @include flex(column, center, center);
+
+        
+        .lazy-image{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    // === TABLET (hasta 768px) ===
+    @include respond-to(md){
+        @include flex(column, center, center, nowrap);
+        gap: $spacing-lg;
+        
+        &__form{
+            flex: none;
+            width: 100%;
+            max-width: 500px;
+            order: 2;
+        }
+
+        &__image{
+            flex: none;
+            width: 100%;
+            height: 320px;
+            order: 1;
+        }
+    }
+
+    // === MÓVIL (hasta 576px) ===
+    @include respond-to(sm){
+        gap: $spacing-md;
+        
+        &__form{
+            max-width: none;
+        }
+
+        &__image{
+            height: 280px;
+            min-height: 280px;
         }
     }
 }
