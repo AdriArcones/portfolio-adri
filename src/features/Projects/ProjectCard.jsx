@@ -3,7 +3,7 @@ import CustomChip from "../../shared/components/custom-chip/CustomChip";
 import CustomButton from "../../shared/components/custom-button/CustomButton";
 import LazyImage from "../../shared/components/lazy-image/LazyImage";
 import PhotoGallery from "../../shared/components/photo-gallery/PhotoGallery";
-import { Github } from "lucide-react";
+import { Github, ChevronRight } from "lucide-react";
 
 export const ProjectCard = ({
   title,
@@ -41,6 +41,7 @@ export const ProjectCard = ({
         <div className="project-card__buttons">
           <CustomButton
             variant="primary"
+            rightIcon={<ChevronRight />}
             onClick={() => {
               window.open(link, "_blank");
             }}

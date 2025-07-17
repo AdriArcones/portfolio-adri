@@ -8,26 +8,8 @@ import NightlyMovil from "../assets/images/projects/nightly/nightly-mobile.png";
 
 export const projectsData = [
   {
-    title: "Pequeños Navegantes",
-    description: "Una página web para una empresa de campamentos. La web permite reservar al usuario según sus necesidades y a los monitores y administradores gestionar los datos.",
-    image: PequenosNavegantesDesktop,
-    images: [
-      {
-        src: PequenosNavegantesDesktop,
-        label: "Vista Desktop"
-      },
-      {
-        src: PequenosNavegantesMovil,
-        label: "Vista Móvil"
-      }
-    ],
-    link: "https://www.google.com",
-    github: "https://github.com/Astaarr/PequenosNavegantes",
-    tags: ["HTML", "CSS", "JavaScript"]
-  },
-  {
     title: "NightLy",
-    description: "Una aplicación web para encontrar planes de ocio nocturno personalizados. La aplicación incluye numerosos filtros para encontrar el plan perfecto y hacer reservas.",
+    description: "Plataforma de eventos nocturnos con sistema completo: búsqueda avanzada, filtrado personalizado, reservas, favoritos y notificaciones via correo.",
     image: NightlyDesktop,
     images: [
       {
@@ -43,5 +25,24 @@ export const projectsData = [
     github: "https://github.com/Astaarr/Nightly",
     tags: ["React", "Sass"]
   },
+  {
+    title: "Pequeños Navegantes",
+    description: "Gestión integral de campamentos urbanos: reservas flexibles, paneles administrativos para padres, monitores y admin, y control de actividades y grupos.",
+    image: PequenosNavegantesDesktop,
+    images: [
+      {
+        src: PequenosNavegantesDesktop,
+        label: "Vista Desktop"
+      },
+      {
+        src: PequenosNavegantesMovil,
+        label: "Vista Móvil"
+      }
+    ],
+    link: "https://www.google.com",
+    github: "https://github.com/Astaarr/PequenosNavegantes",
+    tags: ["HTML", "CSS", "JavaScript"]
+  },
+  
 
 ]; 
