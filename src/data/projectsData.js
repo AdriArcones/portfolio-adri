@@ -23,7 +23,7 @@ export const projectsData = [
     ],
     link: "https://nightly.it.com/",
     github: "https://github.com/Astaarr/Nightly",
-    tags: ["React", "Sass"]
+    tags: ["React", "Sass", "Node JS"]
   },
   {
     title: "Pequeños Navegantes",

@@ -1,6 +1,6 @@
 export const heroData = {
   subtitle: {
-    text: "Desarrollador Frontend",
+    text: "Desarrollador Web",
     icon: "CheckCheck"
   },
   title: {

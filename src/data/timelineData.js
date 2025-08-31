@@ -8,6 +8,7 @@ import ShopifyImage from "../assets/images/timeline/shopify.webp";
 import GraduacionImage from "../assets/images/timeline/graduacion.webp";
 import VASSImage from "../assets/images/timeline/vass.webp";
 import NightlyImage from "../assets/images/timeline/nightly.webp";
+import n8nImage from "../assets/images/timeline/n8n.webp";
 
 export const timelineData = [
   {
@@ -79,13 +80,19 @@ export const timelineData = [
         title: "Trabajo final de grado",
         text: "Como <b>trabajo final de grado</b>, quise ir más allá de una entrega académica. Junto a mi amigo Dani Clavel —que, como yo, aprendió backend con Node.js por su cuenta— decidimos crear algo real: <b>Nightly</b>, una <b>red social</b> para descubrir y compartir planes de <b>ocio nocturno</b>. Nightly no fue solo un proyecto: fue la prueba de que cuando el conocimiento se une con las ganas, cualquier idea puede tomar forma.",
         images: [NightlyImage],
-        tags: ["React", "SASS", "Node.js", "SQL"],
+        tags: ["React", "SASS", "Node JS", "SQL"],
       },
       {
         title: "Graduación",
         text: "Finalmente me gradué como <b>desarrollador web</b> con una base sólida en tecnologías como <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>, <b>PHP</b> y <b>SQL</b>, especializado en <b>frontend</b> con <b>React</b>.",
         images: [GraduacionImage],
-        tags: ["HTML", "CSS", "JavaScript", "PHP", "SQL", "React", "Figma"],
+        tags: ["HTML", "CSS", "JavaScript", "PHP", "SQL", "React", "Figma", "Git"],
+      },
+      {
+        title: "Formación en IA y Automatizaciones",
+        text: "Decidí ampliar mi perfil aprendiendo sobre <b>inteligencia artificial</b> y <b>automatizaciones</b> con el curso <b>IA Lab</b> de Nicolás Cort. Descubrí el potencial de los <b>LLMs</b>, la creación de <b>agentes</b> y la orquestación de flujos mediante <b>n8n</b> y <b>APIs</b>. Esta formación me abrió la puerta a integrar soluciones de IA en proyectos web, optimizando procesos y explorando nuevas formas de interacción.",
+        images: [n8nImage],
+        tags: ["LLMs", "Agentes de IA", "RAG", "n8n", "Integraciones API"],
       },
     ],
   },

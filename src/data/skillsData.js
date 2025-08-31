@@ -8,6 +8,8 @@ import MaterialUIImage from "../assets/images/skills/material-ui.svg";
 import RadixUI from "../assets/images/skills/radix-ui.svg";
 import WordPressImage from "../assets/images/skills/wordpress.svg";
 import ShopifyImage from "../assets/images/skills/shopify.svg";
+import n8nImage from "../assets/images/skills/n8n.svg";
+import sqlImage from "../assets/images/skills/sql.svg";
 import TypeScriptImage from "../assets/images/skills/typescript.svg";
 import NodeJSImage from "../assets/images/skills/nodejs.svg";
 import NextJSImage from "../assets/images/skills/next-js.svg";
@@ -26,6 +28,7 @@ import AWSImage from "../assets/images/skills/aws.svg";
 import ScrumStudyImage from "../assets/images/skills/scrumstudy.svg";
 import CiscoImage from "../assets/images/skills/cisco.svg";
 import UniversidadEuropeaImage from "../assets/images/skills/universidad-europea.svg";
+import ialabImage from "../assets/images/skills/ialab.svg";
 
 
 
@@ -73,6 +76,14 @@ export const tabs = [
             {
                 image: ShopifyImage,
                 title: 'Shopify',
+            },
+            {
+                image: n8nImage,
+                title: 'n8n',
+            },
+            {
+                image: sqlImage,
+                title: 'SQL',
             },
         ]
     },
@@ -145,8 +156,12 @@ export const tabs = [
         title: 'Certificaciones',
         content: [
             {
+                image: ialabImage,
+                title: 'IA Lab',
+            },
+            {
                 image: UniversidadEuropeaImage,
-                title: 'Desarrollor de Aplicaciones Web',
+                title: 'DAW',
             },
             {
                 image: AWSImage,
