@@ -42,17 +42,17 @@ export const timelineData = [
         images: [IllustratorImage],
         tags: ["Adobe Illustrator", "Adobe Photoshop", "UX"],
       },
-    ],
-  },
-  {
-    title: "2024",
-    content: [
       {
         title: "Ampliando mis conocimientos",
         text: "Decidí dar el siguiente paso: me matriculé en el grado de <b>Desarrollo de Aplicaciones Web</b> en la <b>Universidad Europea</b>. Empecé a consolidar todo lo que ya sabía de <b>HTML</b> y <b>CSS</b>, y aprendí nuevas herramientas como <b>Java</b>, <b>SQL</b>, <b>Linux</b> y <b>Git</b>.",
         images: [UniversidadImage],
         tags: ["HTML", "CSS", "Java", "SQL", "Linux", "Git"],
       },
+    ],
+  },
+  {
+    title: "2024",
+    content: [
       {
         title: "Trabajo en una agencia inmobiliaria",
         text: "Ese mismo verano, mis conocimientos de <b>diseño</b> me llevaron a trabajar en una <b>agencia inmobiliaria</b> creando su <b>logo</b> y materiales promocionales. No solo me gustó, sino que reafirmó que podía aportar <b>valor real</b>.",

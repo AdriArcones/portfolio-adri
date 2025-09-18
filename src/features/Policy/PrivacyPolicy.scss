@@ -1,0 +1,21 @@
+@use '../../shared/styles/variables.scss' as *;
+@use '../../shared/styles/mixins.scss' as *;
+
+.privacy-policy {
+    margin-top: $spacing-xl;
+    justify-content: flex-start;
+
+    &__content {
+        @include flex(column, flex-start, flex-start);
+        gap: $spacing-md;
+    }
+
+    &__title {
+        margin: $spacing-lg 0;
+    }
+
+    &__item-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+}  
