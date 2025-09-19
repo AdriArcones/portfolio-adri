@@ -47,9 +47,9 @@ export const Header = () => {
   };
 
   const downloadCV = () => {
-    const link = document.createElement('a');
-    link.href = '/cv-adrian-arcones.pdf';
-    link.download = 'CV-Adrian-Arcones.pdf';
+    const link = document.createElement("a");
+    link.href = "/cv-adrian-arcones.pdf";
+    link.download = "CV-Adrian-Arcones.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -65,7 +65,9 @@ export const Header = () => {
         }`}
       >
         <div className="header__logo">
-          <img src={logo} alt="Logo" className="header__logo-image" />
+          <CustomLink variant="secondary" to="/" className="header__logo-link">
+            <img src={logo} alt="Logo" className="header__logo-image" />
+          </CustomLink>
         </div>
 
         <div className="header__menu">
@@ -162,10 +164,7 @@ export const Header = () => {
 
       {/* Overlay que solo aparece cuando el menú está abierto */}
       {isMenuOpen && (
-        <div 
-          className="header__overlay"
-          onClick={closeMenu}
-        ></div>
+        <div className="header__overlay" onClick={closeMenu}></div>
       )}
     </header>
   );

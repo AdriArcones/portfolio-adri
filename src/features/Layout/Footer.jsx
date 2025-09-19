@@ -4,10 +4,8 @@ import logo from "../../assets/images/contact/logo.svg";
 import CustomLink from "../../shared/components/custom-link/CustomLink";
 import CustomTooltip from "../../shared/components/custom-tooltip/CustomTooltip";
 import { Linkedin, Mail, Github, Download } from "lucide-react";
-import CustomButton from "../../shared/components/custom-button/CustomButton";
 
 export const Footer = () => {
-
   return (
     <footer className="footer">
       <div className="footer__content">
@@ -66,6 +64,13 @@ export const Footer = () => {
           &copy; {new Date().getFullYear()} Adrián Arcones. Todos los derechos
           reservados.
         </p>
+        <CustomLink
+          variant="secondary"
+          to="/privacy-policy"
+          external
+        >
+          Política de Privacidad
+        </CustomLink>
       </div>
     </footer>
   );

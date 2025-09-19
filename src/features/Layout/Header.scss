@@ -38,13 +38,17 @@
     height: 80px;
     @include flex(column, center, flex-start);
     padding: $spacing-sm;
-    cursor: pointer;
 
     &-image {
       height: 100%;
       width: auto;
       object-fit: contain;
       display: block;
+    }
+
+    &-link {
+      width: auto;
+      height: 100%;
     }
   }
 

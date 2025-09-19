@@ -5,7 +5,7 @@
   width: 100%;
   min-height: 250px;
   z-index: $z-index-header;
-  @include glassmorphism(50px, 0.05);
+  @include glassmorphism(100px, 0.05);
 
   &__content {
     @include container;
@@ -40,7 +40,8 @@
       }
 
       &-info{
-        @include flex(column, center, flex-start, nowrap);
+        @include flex(column, center, center, nowrap);
+        text-align: center;
         margin-top: $spacing-xs;
         @include respond-to(sm){
 
@@ -66,4 +67,5 @@
     padding: $spacing-md 0;
     text-align: center;
   }
+
 }
